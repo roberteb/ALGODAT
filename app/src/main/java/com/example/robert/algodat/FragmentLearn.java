@@ -40,10 +40,13 @@ public class FragmentLearn extends Fragment {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
 
-            String[] locations = {"SWIZERLAND", "sefsf"};
+            String[] locations = {"Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6"};
 
             //flags for ListView (order dependent on locationOrder)
-            int flags[] = {R.mipmap.ic_hash, R.mipmap.ic_hash};
+            int flags[] = { R.mipmap.ic_hash, R.mipmap.ic_hash,
+                            R.mipmap.ic_hash, R.mipmap.ic_launcher,
+                            R.mipmap.ic_hash, R.mipmap.ic_hash
+                            };
 
 
             //assign ListView

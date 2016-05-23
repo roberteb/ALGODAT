@@ -2,6 +2,7 @@ package com.example.robert.algodat;
 
 
 import android.content.Context;
+import android.support.annotation.DrawableRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,6 @@ public class CustomAdapter extends ArrayAdapter <String> {
     }
 
 
-
     //set the customView for the listItems
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -27,12 +27,11 @@ public class CustomAdapter extends ArrayAdapter <String> {
         View customView = customInflater.inflate(R.layout.custom_block, parent, false);
 
         //assign textView and imageView
-        TextView listItemTextView = (TextView) customView.findViewById(R.id.textView);
-        ImageView listItemImageView = (ImageView) customView.findViewById(R.id.imageView);
+        TextView compoundTextView = (TextView) customView.findViewById(R.id.compoundTextView);
 
         //assign particular flags and locations to the listItems
-        listItemTextView.setText(getItem(position));
-        listItemImageView.setImageResource(flags[position]);
+        compoundTextView.setText(getItem(position));
+        compoundTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, flags[position], 0, 0);
 
         //return customView to locationAdapter in Main.class
         return customView;
