@@ -1,13 +1,17 @@
 package com.example.robert.algodat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 
 public class FragmentLearn extends Fragment {
         /**
@@ -34,7 +38,34 @@ public class FragmentLearn extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
+
+            String[] locations = {"SWIZERLAND", "sefsf"};
+
+            //flags for ListView (order dependent on locationOrder)
+            int flags[] = {R.mipmap.ic_hash, R.mipmap.ic_hash};
+
+
+            //assign ListView
+            GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView);
+
+
+            locationGridView.setAdapter(new CustomAdapter(getActivity(), locations, flags));
+
+
+         /*   locationGridView.setOnItemClickListener(
+                    new AdapterView.OnItemClickListener(){
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String location = String.valueOf(parent.getItemAtPosition(position));
+                            Intent intent = new Intent(Main.this, Weather.class);
+                            intent.putExtra("locationMessage", location);
+                            startActivity(intent);
+                        }
+                    }
+
+            );
+            */
 
             return rootView;
         }
