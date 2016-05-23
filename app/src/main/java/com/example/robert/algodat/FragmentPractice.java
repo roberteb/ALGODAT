@@ -40,7 +40,7 @@ public class FragmentPractice extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_practice, container, false);
 
-        String[] locations = {"Sorting", "Hash Tables", "Master Theorem", "Graphs"};
+        String[] locations = {"Sort", "Hash Tables", "Master Theorem", "Graphs"};
 
         //flags for ListView (order dependent on locationOrder)
         int flags[] = { R.mipmap.ic_launcher, R.mipmap.ic_hash,
