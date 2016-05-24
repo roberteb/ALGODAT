@@ -1,10 +1,12 @@
-package com.example.robert.algodat;
+package com.example.robert.algodat.MainMenu;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.robert.algodat.R;
 
 public class FragmentExam extends Fragment {
     /**

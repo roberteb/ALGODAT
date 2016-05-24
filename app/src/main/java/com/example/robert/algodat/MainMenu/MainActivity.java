@@ -1,4 +1,4 @@
-package com.example.robert.algodat;
+package com.example.robert.algodat.MainMenu;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.robert.algodat.R;
 
 public class MainActivity extends AppCompatActivity {
 
