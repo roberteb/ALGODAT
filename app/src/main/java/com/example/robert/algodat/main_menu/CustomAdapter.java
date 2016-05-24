@@ -1,4 +1,4 @@
-package com.example.robert.algodat;
+package com.example.robert.algodat.main_menu;
 
 
 import android.content.Context;

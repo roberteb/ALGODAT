@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.example.robert.algodat.CustomAdapter;
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.sort.SortList;
 
