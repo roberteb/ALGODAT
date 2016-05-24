@@ -13,12 +13,12 @@ import android.widget.TextView;
 import com.example.robert.algodat.R;
 
 public class CustomAdapter extends ArrayAdapter <String> {
-    private int[] flags;
+    private int[] icons;
 
     //constructor
-    public CustomAdapter(Context context, String[] locations, int[] flags) {
+    public CustomAdapter(Context context, String[] locations, int[] icons) {
         super(context, R.layout.custom_block, locations);
-        this.flags = flags;
+        this.icons = icons;
     }
 
 
@@ -33,7 +33,7 @@ public class CustomAdapter extends ArrayAdapter <String> {
 
         //assign particular flags and locations to the listItems
         compoundTextView.setText(getItem(position));
-        compoundTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, flags[position], 0, 0);
+        compoundTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, icons[position], 0, 0);
 
         //return customView to locationAdapter in Main.class
         return customView;

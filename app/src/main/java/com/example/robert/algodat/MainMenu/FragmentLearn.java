@@ -39,8 +39,8 @@ public class FragmentLearn extends Fragment {
 
             String[] locations = {"Algorithms", "Data Structures", "Vectors", "Lists", "Trees", "Graphs"};
 
-            //flags for ListView (order dependent on locationOrder)
-            int flags[] = { R.mipmap.ic_launcher, R.mipmap.ic_launcher,
+            //iconsLearn for ListView (order dependent on locationOrder)
+            int iconsLearn[] = { R.mipmap.ic_launcher, R.mipmap.ic_launcher,
                             R.mipmap.ic_launcher, R.mipmap.ic_launcher,
                             R.mipmap.ic_launcher, R.mipmap.ic_launcher
                             };
@@ -50,7 +50,7 @@ public class FragmentLearn extends Fragment {
             GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView);
 
 
-            locationGridView.setAdapter(new CustomAdapter(getActivity(), locations, flags));
+            locationGridView.setAdapter(new CustomAdapter(getActivity(), locations, iconsLearn));
 
 
          /*   locationGridView.setOnItemClickListener(
