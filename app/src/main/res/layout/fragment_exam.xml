@@ -8,5 +8,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainMenu.MainActivity$PlaceholderFragment">
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mode"
+        android:id="@+id/examModeSwitch"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="97dp"
+        android:checked="false" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/examModeIcon"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="EASY"
+        android:id="@+id/modeTextView"
+        android:layout_alignTop="@+id/examModeSwitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Try your luck!"
+        android:id="@+id/tryLuckTextView"
+        android:layout_below="@id/examModeIcon"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
 
