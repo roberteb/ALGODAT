@@ -1,4 +1,4 @@
-package com.example.robert.algodat.MainMenu;
+package com.example.robert.algodat.main_menu;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;

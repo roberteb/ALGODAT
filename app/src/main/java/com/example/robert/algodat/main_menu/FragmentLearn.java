@@ -1,4 +1,4 @@
-package com.example.robert.algodat.MainMenu;
+package com.example.robert.algodat.main_menu;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.example.robert.algodat.CustomAdapter;
 import com.example.robert.algodat.R;
 
 
@@ -37,20 +38,20 @@ public class FragmentLearn extends Fragment {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
 
-            String[] locations = {"Algorithms", "Data Structures", "Vectors", "Lists", "Trees", "Graphs"};
+            String[] textLearn = {"Algorithms", "Data Structures", "Vectors", "Lists", "Trees", "Graphs"};
 
             //iconsLearn for ListView (order dependent on locationOrder)
-            int iconsLearn[] = { R.mipmap.ic_launcher, R.mipmap.ic_launcher,
-                            R.mipmap.ic_launcher, R.mipmap.ic_launcher,
-                            R.mipmap.ic_launcher, R.mipmap.ic_launcher
-                            };
+            int iconsLearn[] = {R.mipmap.ic_launcher, R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher, R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher, R.mipmap.ic_launcher
+                                };
 
 
             //assign ListView
             GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView);
 
 
-            locationGridView.setAdapter(new CustomAdapter(getActivity(), locations, iconsLearn));
+            locationGridView.setAdapter(new CustomAdapter(getActivity(), textLearn, iconsLearn));
 
 
          /*   locationGridView.setOnItemClickListener(

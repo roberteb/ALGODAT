@@ -1,4 +1,4 @@
-package com.example.robert.algodat.MainMenu;
+package com.example.robert.algodat.main_menu;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,8 +11,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.robert.algodat.R;
-
-import org.w3c.dom.Text;
 
 public class FragmentExam extends Fragment {
     /**

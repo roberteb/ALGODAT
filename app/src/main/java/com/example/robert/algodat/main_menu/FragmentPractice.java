@@ -1,13 +1,17 @@
-package com.example.robert.algodat.MainMenu;
+package com.example.robert.algodat.main_menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.robert.algodat.CustomAdapter;
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.sort.SortList;
 
 
 public class FragmentPractice extends Fragment {
@@ -37,34 +41,31 @@ public class FragmentPractice extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_practice, container, false);
 
-        String[] locations = {"Sort", "Hash Tables", "Master Theorem", "Graphs"};
+        final String[] textPractice = {"Sort", "Hash Tables", "Master Theorem", "Graphs"};
 
         //flags for ListView (order dependent on locationOrder)
-        int flags[] = { R.mipmap.ic_launcher, R.mipmap.ic_hash,
-                R.mipmap.ic_launcher, R.mipmap.ic_launcher
-        };
+        int iconsPractice[] = { R.mipmap.ic_launcher, R.mipmap.ic_hash,
+                                R.mipmap.ic_launcher, R.mipmap.ic_launcher
+                                };
 
 
         //assign ListView
         GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView2);
 
 
-        locationGridView.setAdapter(new CustomAdapter(getActivity(), locations, flags));
+        locationGridView.setAdapter(new CustomAdapter(getActivity(), textPractice, iconsPractice));
 
 
-         /*   locationGridView.setOnItemClickListener(
-                    new AdapterView.OnItemClickListener(){
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String location = String.valueOf(parent.getItemAtPosition(position));
-                            Intent intent = new Intent(Main.this, Weather.class);
-                            intent.putExtra("locationMessage", location);
-                            startActivity(intent);
-                        }
-                    }
+         locationGridView.setOnItemClickListener(
+            new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getActivity(), SortList.class);
+                    startActivity(intent);
+                }
+            }
+         );
 
-            );
-            */
 
         return rootView;
     }
