@@ -21,6 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_hash_list" />
+    <include layout="@layout/hash_content_hash_list" />
 
 </android.support.design.widget.CoordinatorLayout>

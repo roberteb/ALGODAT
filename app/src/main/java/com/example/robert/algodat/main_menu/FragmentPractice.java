@@ -39,7 +39,7 @@ public class FragmentPractice extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_practice, container, false);
+        View rootView = inflater.inflate(R.layout.main_menu_fragment_practice, container, false);
 
         final String[] textPractice = { "Hash Tables", "Sorting Algorithms", "Master Theorem", "Graphs"};
 
@@ -70,6 +70,8 @@ public class FragmentPractice extends Fragment {
                             intent = new Intent(getActivity(), SortList.class);
                             startActivity(intent);
                             break;
+                        case 2:
+                        case 3:
                         default:
                     }
 
