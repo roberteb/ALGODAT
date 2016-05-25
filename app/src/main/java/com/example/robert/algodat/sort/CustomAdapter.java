@@ -33,7 +33,7 @@ public class CustomAdapter extends ArrayAdapter <String> {
         compoundTextView.setText(getItem(position));
         compoundTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(icons[position], 0, 0, 0);
 
-        //return customView to locationAdapter in Main.class
+        //return customView to locationAdapter in MainActivity.class
         return customView;
     }
 }
