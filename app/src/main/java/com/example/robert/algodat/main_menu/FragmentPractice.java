@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.hash.HashList;
 import com.example.robert.algodat.sort.SortList;
 
 
@@ -59,8 +60,20 @@ public class FragmentPractice extends Fragment {
             new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getActivity(), SortList.class);
-                    startActivity(intent);
+                    Intent intent;
+                    switch (position){
+                        case 0:
+                            intent = new Intent(getActivity(), HashList.class);
+                            startActivity(intent);
+                            break;
+                        case 1:
+                            intent = new Intent(getActivity(), SortList.class);
+                            startActivity(intent);
+                            break;
+                        default:
+                    }
+
+
                 }
             }
          );

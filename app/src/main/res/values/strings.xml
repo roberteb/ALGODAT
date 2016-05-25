@@ -65,4 +65,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_sort_list">Sorting Algorithms</string>
+    <string name="title_activity_hash_list">Hashtables</string>
 </resources>

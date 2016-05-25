@@ -1,4 +1,4 @@
-package com.example.robert.algodat.sort;
+package com.example.robert.algodat.hash;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,12 +11,12 @@ import android.view.View;
 
 import com.example.robert.algodat.R;
 
-public class SortList extends AppCompatActivity {
+public class HashList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sort_list);
+        setContentView(R.layout.activity_hash_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,4 +47,3 @@ public class SortList extends AppCompatActivity {
     }
 
 }
-
