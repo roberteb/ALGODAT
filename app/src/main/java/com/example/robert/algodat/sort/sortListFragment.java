@@ -2,22 +2,18 @@ package com.example.robert.algodat.sort;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.robert.algodat.R;
-import com.example.robert.algodat.main_menu.FragmentLearn;
-import com.example.robert.algodat.main_menu.FragmentPractice;
 
 
 public class SortListFragment extends Fragment {
 
-    FragmentTransaction ft;
+
     Fragment frag;
 
     public SortListFragment() {
@@ -63,6 +59,11 @@ public class SortListFragment extends Fragment {
                                 break;
                             case 2:
                             case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
                             default:
                         }
                     }
