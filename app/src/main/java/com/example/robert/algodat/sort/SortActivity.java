@@ -67,8 +67,9 @@ public class SortActivity extends AppCompatActivity {
             return true;
         }
         //Up button
-            finish();
+            super.onBackPressed();
 
         return true;
     }
+
 }
