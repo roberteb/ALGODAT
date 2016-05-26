@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="ALGODAT">
+
+        <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/home_id"
+                android:title="@string/home_nd"
+                android:icon="@drawable/home"
+                />
+
+            <item
+            android:id="@+id/profile_id"
+            android:title="@string/profile_nd"
+            android:icon="@drawable/avatar"
+            />
+
+            <item
+            android:id="@+id/invite_friends_id"
+            android:title="@string/invite_friends_nd"
+            android:icon="@drawable/addfriend"
+            />
+
+            <item
+            android:id="@+id/settings_id"
+            android:title="@string/settings_nd"
+            android:icon="@drawable/settings"
+            />
+
+            <item
+            android:id="@+id/feedback_id"
+            android:title="@string/feedback_nd"
+            android:icon="@drawable/feedback"
+            />
+
+
+
+        </group>
+
+</menu>

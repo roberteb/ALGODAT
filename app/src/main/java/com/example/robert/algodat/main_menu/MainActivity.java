@@ -1,13 +1,17 @@
 package com.example.robert.algodat.main_menu;
 
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import android.support.v4.widget.DrawerLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +23,12 @@ import android.view.ViewGroup;
 import com.example.robert.algodat.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Navigation Drawer Hamburger Icon
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle actionBarDrawerToggle;
+    NavigationView mDrawer;
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -56,9 +66,21 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        // Navigation Drawer // Funktioniert noch nicht
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawer_open, R.string.drawer_close);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
     }
 
+
+    // Navigation Drawer Hamburger Icon
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState)
+    {
+        super.onPostCreate(savedInstanceState);
+        actionBarDrawerToggle.syncState();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

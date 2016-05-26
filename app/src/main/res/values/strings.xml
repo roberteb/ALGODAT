@@ -66,4 +66,15 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_hash_list">Hashtables</string>
     <string name="title_activity_sort">Sorting Algorithms</string>
+
+    <!-- Navigation Drawer-->
+    <string name="home_nd">Home</string>
+    <string name="profile_nd">Profile</string>
+    <string name="invite_friends_nd">Invite Friends</string>
+    <string name="settings_nd">Settings</string>
+    <string name="feedback_nd">Feedback</string>
+    <string name="test">Test</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
 </resources>

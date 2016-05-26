@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="150dp"
+    android:background="@drawable/bluebackground"
+    >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/logo_nvd"
+        android:src="@drawable/logo"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="HCI Team 6                   (Gruppe: Freitag)"
+        android:layout_toRightOf="@+id/logo_nvd"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/appname_nvd"
+        />
+
+
+</RelativeLayout>
