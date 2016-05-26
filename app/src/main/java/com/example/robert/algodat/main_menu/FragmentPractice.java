@@ -10,8 +10,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.robert.algodat.R;
-import com.example.robert.algodat.hash.HashList;
-import com.example.robert.algodat.sort.SortList;
+import com.example.robert.algodat.hash.HashActivity;
+import com.example.robert.algodat.sort.SortActivity;
 
 
 public class FragmentPractice extends Fragment {
@@ -63,11 +63,11 @@ public class FragmentPractice extends Fragment {
                     Intent intent;
                     switch (position){
                         case 0:
-                            intent = new Intent(getActivity(), HashList.class);
+                            intent = new Intent(getActivity(), HashActivity.class);
                             startActivity(intent);
                             break;
                         case 1:
-                            intent = new Intent(getActivity(), SortList.class);
+                            intent = new Intent(getActivity(), SortActivity.class);
                             startActivity(intent);
                             break;
                         case 2:

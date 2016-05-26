@@ -29,18 +29,17 @@
                 android:value=".main_menu.MainActivity" />
         </activity>
         <activity
-            android:name=".sort.SortList"
-            android:label="@string/title_activity_sort_list"
+            android:name=".hash.HashActivity"
+            android:label="@string/title_activity_hash_list"
             android:parentActivityName=".main_menu.MainActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
         <activity
-            android:name=".hash.HashList"
-            android:label="@string/title_activity_hash_list"
+            android:name=".sort.SortActivity"
+            android:label="@string/title_activity_sort"
             android:parentActivityName=".main_menu.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
