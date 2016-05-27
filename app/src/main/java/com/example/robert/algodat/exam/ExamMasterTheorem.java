@@ -1,9 +1,11 @@
 package com.example.robert.algodat.exam;
 
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.robert.algodat.R;
 
@@ -14,6 +16,8 @@ public class ExamMasterTheorem extends AppCompatActivity {
     ImageView thirdArrow;
     ImageView forthArrow;
     ImageView fifthArrow;
+    TextView timerTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,20 @@ public class ExamMasterTheorem extends AppCompatActivity {
 
         fifthArrow = (ImageView) findViewById(R.id.fifthExamArrow);
         fifthArrow.setImageResource(R.drawable.arrow_unseen);
+
+        timerTextView = (TextView) findViewById(R.id.timerTextView);
+
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timerTextView.setText("s " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                timerTextView.setText("done!");
+            }
+        }.start();
+
 
     }
 }

@@ -12,7 +12,8 @@
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:id="@+id/arrowGridLayout">
 
         <ImageView
             android:layout_width="50dp"
@@ -52,13 +53,24 @@
             android:layout_toLeftOf="@+id/forthExamArrow"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" />
+
     </GridLayout>
 
-    <TextClock
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/timerImageView"
+        android:src="@mipmap/time"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/arrowGridLayout" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_alignTop="@+id/digitalClock"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="timer"
+        android:id="@+id/timerTextView"
+        android:layout_alignBottom="@+id/timerImageView"
+        android:layout_toEndOf="@+id/timerImageView" />
 
 </RelativeLayout>
