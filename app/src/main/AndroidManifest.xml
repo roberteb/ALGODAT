@@ -48,15 +48,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
-        <activity
-            android:name=".ProfileActivity"
-            android:label="@string/title_activity_profile"
-            android:parentActivityName=".main_menu.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.robert.algodat.main_menu.MainActivity" />
-        </activity>
+        <activity android:name=".exam.ExamMasterTheorem"></activity>
     </application>
 
 </manifest>
