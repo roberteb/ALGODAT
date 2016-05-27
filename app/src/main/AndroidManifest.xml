@@ -31,8 +31,8 @@
         <activity
             android:name=".hash.HashActivity"
             android:label="@string/title_activity_hash_list"
-            android:screenOrientation="portrait"
             android:parentActivityName=".main_menu.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -40,8 +40,17 @@
         </activity>
         <activity
             android:name=".sort.SortActivity"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_sort"
+            android:parentActivityName=".main_menu.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.robert.algodat.main_menu.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile"
             android:parentActivityName=".main_menu.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
