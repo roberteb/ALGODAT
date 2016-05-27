@@ -1,5 +1,6 @@
 package com.example.robert.algodat.main_menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.exam.ExamMasterTheorem;
 
 public class FragmentExam extends Fragment {
     /**
@@ -58,6 +60,14 @@ public class FragmentExam extends Fragment {
                     examModeIcon.setImageResource(R.mipmap.ic_easy);
                     modeTextView.setText("EASY");
                 }
+            }
+        });
+
+        examModeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainIntent = new Intent(getActivity(), ExamMasterTheorem.class);
+                startActivity(mainIntent);
             }
         });
 
