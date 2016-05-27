@@ -48,7 +48,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
-        <activity android:name=".exam.ExamMasterTheorem"></activity>
+        <activity android:name=".exam.ExamMasterTheorem" />
         <activity
             android:name=".ProfileActivity"
             android:label="Profile"
@@ -58,6 +58,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
+        <activity android:name=".exam.ExamSelectionSort"></activity>
     </application>
 
 </manifest>

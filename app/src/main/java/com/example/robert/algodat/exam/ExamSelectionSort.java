@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.robert.algodat.R;
 
-public class ExamMasterTheorem extends AppCompatActivity {
+public class ExamSelectionSort extends AppCompatActivity {
 
     ImageView firstArrow;
     ImageView secondArrow;
@@ -26,13 +26,18 @@ public class ExamMasterTheorem extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam_master_theorem);
+        setContentView(R.layout.activity_exam_selection_sort);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            remainedSeconds = extras.getLong("REMAINED_SECONDS");
+        }
 
         firstArrow = (ImageView) findViewById(R.id.firstExamArrow);
         firstArrow.setImageResource(R.drawable.arrow_seen);
 
         secondArrow = (ImageView) findViewById(R.id.secondExamArrow);
-        secondArrow.setImageResource(R.drawable.arrow_unseen);
+        secondArrow.setImageResource(R.drawable.arrow_seen);
 
         thirdArrow = (ImageView) findViewById(R.id.thirdExamArrow);
         thirdArrow.setImageResource(R.drawable.arrow_unseen);
@@ -47,7 +52,8 @@ public class ExamMasterTheorem extends AppCompatActivity {
 
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
-        new CountDownTimer(5400000, 1000) {
+
+        new CountDownTimer(remainedSeconds, 1000) {
             private long seconds = 60;
 
             public void onTick(long millisUntilFinished) {
@@ -66,7 +72,7 @@ public class ExamMasterTheorem extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent mainIntent = new Intent(ExamMasterTheorem.this, ExamSelectionSort.class);
+                Intent mainIntent = new Intent(ExamSelectionSort.this, ExamSelectionSort.class);
                 mainIntent.putExtra("REMAINED_SECONDS", remainedSeconds);
                 startActivity(mainIntent);
             }
