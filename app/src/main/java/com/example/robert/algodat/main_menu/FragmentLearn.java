@@ -49,7 +49,7 @@ public class FragmentLearn extends Fragment {
         };
 
 
-        //assign GridView
+        //assign GridView-
         GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView);
 
 
