@@ -44,7 +44,7 @@ public class FragmentPractice extends Fragment {
         final String[] textPractice = { "Hash Tables", "Sorting Algorithms", "Master Theorem", "Graphs"};
 
         //flags for ListView (order dependent on locationOrder)
-        int iconsPractice[] = { R.mipmap.ic_hash, R.mipmap.ic_launcher,
+        int iconsPractice[] = { R.mipmap.ic_launcher, R.mipmap.ic_hash,
                                 R.mipmap.ic_launcher, R.mipmap.ic_launcher
                                 };
 

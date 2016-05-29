@@ -12,13 +12,14 @@ import com.example.robert.algodat.R;
 
 public class CustomAdapter extends ArrayAdapter <String> {
     private int[] icons;
+    private static int[] count;
 
     //constructor
-    public CustomAdapter(Context context, String[] text, int[] icons) {
+    public CustomAdapter(Context context, String[] text, int[] icons, int length) {
         super(context, R.layout.custom_list_item, text);
         this.icons = icons;
+        count = new int[length];
     }
-
 
     //set the customView for the listItems
     @Override

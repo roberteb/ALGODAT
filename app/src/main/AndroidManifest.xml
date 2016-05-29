@@ -58,7 +58,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
-        <activity android:name=".exam.ExamSelectionSort"></activity>
+        <activity android:name=".exam.ExamSelectionSort" />
+        <activity
+            android:name=".sort.SortSelectionActivity"
+            android:label="@string/title_activity_sort_selection"
+            android:parentActivityName=".sort.SortActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.robert.algodat.sort.SortActivity" />
+        </activity>
     </application>
 
 </manifest>
