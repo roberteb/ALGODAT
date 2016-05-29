@@ -10,12 +10,36 @@
         android:layout_height="match_parent"
         android:id="@+id/viewSwitcher"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/holo_orange_light">
+        android:background="@android:color/holo_orange_light"
+        android:layout_above="@+id/linearLayout2">
 
         <RelativeLayout
             android:id="@+id/view1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="SortType:"
+                android:id="@+id/typeTextView"
+                android:textColor="#FFFF"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:text="Watch Video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoButton"
+                android:textStyle="bold"
+                android:textColor="#FFFF"
+                android:background="@android:color/holo_purple"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -27,34 +51,13 @@
                 android:layout_below="@+id/typeTextView"
                 android:layout_alignParentStart="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="SortType:"
-                android:id="@+id/typeTextView"
-                android:textColor="#FFFF"
-                android:textStyle="bold"
-                android:layout_below="@+id/videoButton"
-                android:layout_alignParentStart="true" />
-
-            <Button
-                android:text="Watch Video"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/videoButton"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold"
-                android:textColor="#FFFF"
-                android:background="@android:color/holo_purple" />
-
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="20dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -68,10 +71,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/infoButton"
-                android:layout_alignParentStart="false"
-                android:textColor="#FFFF"
                 android:textStyle="bold"
-                android:background="#aa66cc" />
+                android:textColor="#FFFF"
+                android:background="@android:color/holo_purple"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
 
         </RelativeLayout>
     </ViewSwitcher>
@@ -82,8 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/linearLayout2"
-        style="?android:attr/buttonBarButtonStyle" >
+        android:id="@+id/linearLayout2" >
 
         <Button
             android:layout_width="0dp"
@@ -98,8 +101,7 @@
             android:id="@+id/sortGoButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            style= "?android:attr/buttonBarButtonStyle"/>
+            android:layout_weight="1" />
     </LinearLayout>
 
 </RelativeLayout>
