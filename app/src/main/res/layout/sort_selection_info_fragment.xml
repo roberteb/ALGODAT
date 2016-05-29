@@ -89,11 +89,11 @@
         android:id="@+id/linearLayout2" >
 
         <Button
+            android:text="Discussion"
+            android:id="@+id/discussionButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Discussion"
-            android:id="@+id/discussionButton"
             android:background="?android:attr/selectableItemBackground" />
 
         <Button
@@ -102,7 +102,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:background="?android:attr/selectableItemBackground" />
     </LinearLayout>
 
 </RelativeLayout>

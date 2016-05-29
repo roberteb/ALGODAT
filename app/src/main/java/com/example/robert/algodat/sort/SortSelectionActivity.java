@@ -26,6 +26,7 @@ public class SortSelectionActivity extends AppCompatActivity {
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Selection Sort");
 
         Button completeButton = (Button)findViewById(R.id.completeButton);
 

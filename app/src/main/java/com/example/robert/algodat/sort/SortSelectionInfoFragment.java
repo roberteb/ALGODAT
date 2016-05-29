@@ -58,10 +58,10 @@ public class SortSelectionInfoFragment extends Fragment {
         TextView sortInfoTextView = (TextView)rootView.findViewById(R.id.sortInfoTextView);
 
         sortTypeTextView.setText("Selection Sort:");
-        sortInfoTextView.setText("Placehoder, placeholder ,placeholder\n" +
-                "Placehoder, placeholder ,placeholder\n" +
-                "Placehoder, placeholder ,placeholder\n" +
-                "Placehoder, placeholder ,placeholder\n");
+        sortInfoTextView.setText( "Placehoder, placeholder, placeholder\n" +
+                                  "Placehoder, placeholder, placeholder\n" +
+                                  "Placehoder, placeholder, placeholder\n" +
+                                  "Placehoder, placeholder, placeholder\n");
 
         infoButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class SortSelectionInfoFragment extends Fragment {
                     public void onClick(View v)
                     {
                         new AnimationUtils();
-                        viewSwitcher.setAnimation(AnimationUtils.makeInChildBottomAnimation(getContext()));
+                        viewSwitcher.setAnimation(AnimationUtils.makeInAnimation(getContext(), true));
                         viewSwitcher.showNext();
                     }
                 }
@@ -82,8 +82,8 @@ public class SortSelectionInfoFragment extends Fragment {
                     @Override
                     public void onClick(View v)
                     {
-                        new AnimationUtils();
-                        viewSwitcher.setAnimation(AnimationUtils.makeInChildBottomAnimation(getContext()));
+                        //new AnimationUtils();
+                        //viewSwitcher.setAnimation(AnimationUtils.makeInAnimation(getContext(), true));
                         viewSwitcher.showPrevious();
                     }
                 }
@@ -104,6 +104,10 @@ public class SortSelectionInfoFragment extends Fragment {
         discussionButton = (Button)rootView.findViewById(R.id.discussionButton);
         discussionButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.mipmap.ic_hash, 0, 0);
         discussionButton.setPadding(0, 30, 0, 0);
+
+        sortGoButton = (Button)rootView.findViewById(R.id.sortGoButton);
+        sortGoButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.mipmap.ic_hash, 0, 0);
+        sortGoButton.setPadding(0, 30, 0, 0);
 
         return rootView;
     }
