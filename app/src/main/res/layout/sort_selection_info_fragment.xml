@@ -24,7 +24,7 @@
                 android:text="SortInfo"
                 android:id="@+id/sortInfoTextView"
                 android:textColor="#FFFF"
-                android:layout_below="@+id/sortTypeTextView"
+                android:layout_below="@+id/typeTextView"
                 android:layout_alignParentStart="true" />
 
             <TextView
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="SortType:"
-                android:id="@+id/sortTypeTextView"
+                android:id="@+id/typeTextView"
                 android:textColor="#FFFF"
                 android:textStyle="bold"
                 android:layout_below="@+id/videoButton"
@@ -82,23 +82,24 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/linearLayout2">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Discussion"
-            android:padding="20dp"
-            android:id="@+id/discussionButton"
-            android:background="?android:attr/selectableItemBackground" />
+        android:id="@+id/linearLayout2"
+        style="?android:attr/buttonBarButtonStyle" >
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:text="Discussion"
+            android:id="@+id/discussionButton"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <Button
             android:text="Let&apos;s Go!"
-            android:id="@+id/sortGoButton" />
+            android:id="@+id/sortGoButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style= "?android:attr/buttonBarButtonStyle"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -54,7 +54,7 @@ public class SortSelectionInfoFragment extends Fragment {
         infoButton.setPadding(0,70,0,70);
         videoButton.setPadding(0,70,0,70);
 
-        TextView sortTypeTextView = (TextView)rootView.findViewById(R.id.sortTypeTextView);
+        TextView sortTypeTextView = (TextView)rootView.findViewById(R.id.typeTextView);
         TextView sortInfoTextView = (TextView)rootView.findViewById(R.id.sortInfoTextView);
 
         sortTypeTextView.setText("Selection Sort:");

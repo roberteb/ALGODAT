@@ -6,18 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.robert.algodat.R;
 
 public class CustomAdapter extends ArrayAdapter <String> {
     private int[] icons;
+    private String[] text;
     private static int[] count;
 
     //constructor
     public CustomAdapter(Context context, String[] text, int[] icons, int length) {
         super(context, R.layout.custom_list_item, text);
         this.icons = icons;
+        this.text = text;
         count = new int[length];
     }
 
@@ -28,11 +31,14 @@ public class CustomAdapter extends ArrayAdapter <String> {
         View customView = customInflater.inflate(R.layout.custom_list_item, parent, false);
 
         //assign textView and imageView
-        TextView compoundTextView = (TextView) customView.findViewById(R.id.compoundTextView);
+        TextView typeTextView = (TextView) customView.findViewById(R.id.typeTextView);
+        TextView visitedTextView = (TextView) customView.findViewById(R.id.visitedTextView);
+        ImageView typeImageView = (ImageView) customView.findViewById(R.id.typeImageView);
 
-        //assign particular flags and locations to the listItems
-        compoundTextView.setText(getItem(position));
-        compoundTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(icons[position], 0, 0, 0);
+        //assign particular text and image to the listItems
+        typeTextView.setText(text[position]);
+        visitedTextView.setText(count[position] + " times");
+        typeImageView.setImageResource(icons[position]);
 
         //return customView to locationAdapter in MainActivity.class
         return customView;

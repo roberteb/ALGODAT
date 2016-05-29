@@ -12,4 +12,12 @@
     tools:context=".sort.SortSelectionActivity"
     tools:showIn="@layout/sort_selection_activity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="complete"
+        android:id="@+id/completeButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
