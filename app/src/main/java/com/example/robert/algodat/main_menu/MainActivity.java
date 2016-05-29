@@ -1,5 +1,6 @@
 package com.example.robert.algodat.main_menu;
 
+import android.content.Intent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -21,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.example.robert.algodat.ProfileActivity;
 import com.example.robert.algodat.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     //Navigation Drawer Hamburger Icon
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView mDrawer;
-    ListView drawerList;
+    NavigationView navigationView;
+    FragmentTransaction fragmentTransaction;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -68,8 +70,32 @@ public class MainActivity extends AppCompatActivity {
 
         // Navigation Drawer // Funktioniert noch nicht
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        navigationView=(NavigationView)findViewById(R.id.design_navigation_view);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawer_open, R.string.drawer_close);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+       // fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        //fragmentTransaction.add(R.id.main_content, new FragmentPractice() );
+        //fragmentTransaction.commit();
+
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home_id: {
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.main_content, new FragmentLearn());
+                        fragmentTransaction.commit();
+                        item.setChecked(true);
+                        drawerLayout.closeDrawers();
+                        break;
+                    }
+                }
+                return true;
+            }
+
+        });
 
     }
 
