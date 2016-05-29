@@ -1,5 +1,6 @@
 package com.example.robert.algodat.main_menu;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,7 @@ import android.widget.ListView;
 
 import com.example.robert.algodat.ProfileActivity;
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -82,21 +84,48 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.home_id: {
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.main_content, new FragmentLearn());
-                        fragmentTransaction.commit();
-                        item.setChecked(true);
-                        drawerLayout.closeDrawers();
-                        break;
-                    }
-                }
+                getActivityByItem(item);
                 return true;
             }
 
         });
 
+
+
+    }
+
+    public Class getActivityByItem(MenuItem item){
+        Class c= null;
+        switch (item.getItemId()) {
+            case R.id.home_id: {
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_content, new FragmentLearn());
+                fragmentTransaction.commit();
+                item.setChecked(true);
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.profile_id: {
+                c=ProfileActivity.class;
+                break;
+            }
+            case R.id.feedback_id: {
+                c=ProfileActivity.class;
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.settings_id: {
+                c=SettingsActivity.class;
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.invite_friends_id: {
+                c=SettingsActivity.class;
+                drawerLayout.closeDrawers();
+                break;
+            }
+        }
+        return c;
     }
 
 
@@ -124,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent=  new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
