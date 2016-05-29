@@ -63,6 +63,7 @@
             android:name=".sort.SortSelectionActivity"
             android:label="@string/title_activity_sort_selection"
             android:parentActivityName=".sort.SortActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

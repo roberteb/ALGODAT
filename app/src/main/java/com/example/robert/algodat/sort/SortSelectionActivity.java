@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +17,7 @@ import com.example.robert.algodat.R;
 
 public class SortSelectionActivity extends AppCompatActivity {
 
+    SortSelectionFragment sortSelectionFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +30,10 @@ public class SortSelectionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Selection Sort");
 
-        Button completeButton = (Button)findViewById(R.id.completeButton);
-
-        completeButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                }
-        );
+        sortSelectionFragment = new SortSelectionFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.sort_selection_content, sortSelectionFragment);
+        ft.commit();
     }
 
     @Override
@@ -70,6 +66,4 @@ public class SortSelectionActivity extends AppCompatActivity {
                     }
                 }).create().show();
     }
-
-
 }
