@@ -43,20 +43,20 @@ public class FragmentPractice extends Fragment {
 
         final String[] textPractice = { "Hash Tables", "Sorting Algorithms", "Master Theorem", "Graphs"};
 
-        //flags for ListView (order dependent on locationOrder)
+        //icons for GridView
         int iconsPractice[] = { R.mipmap.ic_launcher, R.mipmap.ic_hash,
                                 R.mipmap.ic_launcher, R.mipmap.ic_launcher
                                 };
 
 
-        //assign ListView
-        GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView2);
+        //assign GridView
+        GridView practiceGridView = (GridView)rootView.findViewById(R.id.practiceGridView);
 
 
-        locationGridView.setAdapter(new CustomAdapter(getActivity(), textPractice, iconsPractice));
+        practiceGridView.setAdapter(new CustomAdapter(getActivity(), textPractice, iconsPractice));
 
 
-         locationGridView.setOnItemClickListener(
+         practiceGridView.setOnItemClickListener(
             new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

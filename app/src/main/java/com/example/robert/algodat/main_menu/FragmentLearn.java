@@ -42,21 +42,21 @@ public class FragmentLearn extends Fragment {
 
         String[] textLearn = {"Algorithms", "Data Structures", "Vectors", "Lists", "Trees", "Graphs"};
 
-        //iconsLearn for ListView (order dependent on locationOrder)
+        //iconsLearn for GridView
         int iconsLearn[] = {R.mipmap.ic_learn01, R.mipmap.ic_learn02,
                 R.mipmap.ic_learn03, R.mipmap.ic_learn04,
                 R.mipmap.ic_learn05, R.mipmap.ic_learn06
         };
 
 
-        //assign GridView-
-        GridView locationGridView = (GridView)rootView.findViewById(R.id.gridView);
+        //assign GridView
+        GridView learnGridView = (GridView)rootView.findViewById(R.id.learnGridView);
 
 
-        locationGridView.setAdapter(new CustomAdapter(getActivity(), textLearn, iconsLearn));
+        learnGridView.setAdapter(new CustomAdapter(getActivity(), textLearn, iconsLearn));
 
 
-        locationGridView.setOnItemClickListener(
+        learnGridView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

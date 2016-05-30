@@ -30,17 +30,14 @@ public class CustomAdapter extends ArrayAdapter <String> {
         LayoutInflater customInflater = LayoutInflater.from(getContext());
         View customView = customInflater.inflate(R.layout.custom_list_item, parent, false);
 
-        //assign textView and imageView
         TextView typeTextView = (TextView) customView.findViewById(R.id.typeTextView);
         TextView visitedTextView = (TextView) customView.findViewById(R.id.visitedTextView);
         ImageView typeImageView = (ImageView) customView.findViewById(R.id.typeImageView);
 
-        //assign particular text and image to the listItems
         typeTextView.setText(text[position]);
         visitedTextView.setText(count[position] + " times");
         typeImageView.setImageResource(icons[position]);
 
-        //return customView to locationAdapter in MainActivity.class
         return customView;
     }
 }

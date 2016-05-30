@@ -12,7 +12,7 @@
         tools:listitem="@android:layout/simple_list_item_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/gridView"
+        android:id="@+id/learnGridView"
         android:numColumns="2"
         android:horizontalSpacing="0dp"
         android:verticalSpacing="0dp"

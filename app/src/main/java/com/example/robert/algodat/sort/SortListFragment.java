@@ -17,7 +17,6 @@ public class SortListFragment extends Fragment {
 
 
     Fragment frag;
-    private static int position;
 
     final static int sortIcons[] =
     { R.mipmap.ic_hash, R.mipmap.ic_launcher, R.mipmap.ic_launcher,
@@ -33,10 +32,6 @@ public class SortListFragment extends Fragment {
     public SortListFragment() {
     }
 
-    public static int getSortItemSize(){
-        return sortIcons.length;
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,7 +40,6 @@ public class SortListFragment extends Fragment {
 
         getActivity().setTitle("Sorting Algorithms");
 
-        //assign ListView
         ListView sortListView = (ListView)rootView.findViewById(R.id.sortListView);
 
         sortListView.setAdapter(new com.example.robert.algodat.sort

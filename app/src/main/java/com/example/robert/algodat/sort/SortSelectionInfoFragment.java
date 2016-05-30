@@ -82,8 +82,8 @@ public class SortSelectionInfoFragment extends Fragment {
                     @Override
                     public void onClick(View v)
                     {
-                        //new AnimationUtils();
-                        //viewSwitcher.setAnimation(AnimationUtils.makeInAnimation(getContext(), true));
+                        new AnimationUtils();
+                        viewSwitcher.setAnimation(AnimationUtils.makeInAnimation(getContext(), true));
                         viewSwitcher.showPrevious();
                     }
                 }

@@ -29,11 +29,9 @@ public class CustomAdapter extends ArrayAdapter <String> {
         //assign textView and imageView
         TextView compoundTextView = (TextView) customView.findViewById(R.id.compoundTextView);
 
-        //assign particular flags and locations to the listItems
         compoundTextView.setText(getItem(position));
         compoundTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, icons[position], 0, 0);
 
-        //return customView to locationAdapter in Main.class
         return customView;
     }
 }
