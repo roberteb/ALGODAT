@@ -1,20 +1,22 @@
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- These settings headers are only used on tablets. -->
 
-    <header
-        android:fragment="com.example.robert.algodat.SettingsActivity$GeneralPreferenceFragment"
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="sound"
         android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/pref_header_general" />
+        android:title="Sound" />
 
-    <header
-        android:fragment="com.example.robert.algodat.SettingsActivity$NotificationPreferenceFragment"
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/pref_header_notifications" />
+        android:title="Push- Notifications" />
 
-    <header
-        android:fragment="com.example.robert.algodat.SettingsActivity$DataSyncPreferenceFragment"
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="offline"
         android:icon="@drawable/ic_sync_black_24dp"
-        android:title="@string/pref_header_data_sync" />
+        android:title="Offline- Lernen" />
 
-</preference-headers>
+</PreferenceScreen>
