@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class SortSelectionFragment extends Fragment {
     private String help;
     final int[] randNums = {21, 23, 7, 9, 2, 3, 4};
     final int[] sortedNums = {2, 3, 4, 7, 9, 21, 23};
+    private int previous = -1;
 
     public SortSelectionFragment() {
         // Required empty public constructor
@@ -51,6 +53,7 @@ public class SortSelectionFragment extends Fragment {
         for(int i = 0; i < button.length; i++) {
             button[i] = (Button) rootView.findViewById(idArray[i]);
             button[i].setText(String.format("%s", randNums[i]));
+            button[i].setBackgroundColor(Color.LTGRAY);
         }
 
         button[next].setBackgroundColor(Color.RED);
@@ -68,6 +71,23 @@ public class SortSelectionFragment extends Fragment {
                             okButton.setEnabled(true);
                             okButton.setText("Switch with " + button[k].getText() + " ?");
                             pos = k;
+                            if(previous != -1) {
+                                button[k].setBackgroundColor(Color.RED);
+                                button[k].setTextColor(Color.WHITE);
+                                button[k].setEnabled(false);
+                                if(k != previous){
+                                    button[previous].setBackgroundColor(Color.LTGRAY);
+                                    button[previous].setTextColor(Color.BLACK);
+                                    button[previous].setEnabled(true);
+                                    previous = k;
+                                }
+                            }else{
+                                button[k].setBackgroundColor(Color.RED);
+                                button[k].setTextColor(Color.WHITE);
+                                button[k].setEnabled(false);
+                                previous = k;
+                            }
+
                         }
                     }
                 });
@@ -98,6 +118,9 @@ public class SortSelectionFragment extends Fragment {
 
                             okButton.setText("Choose Number");
                             okButton.setEnabled(false);
+                            button[previous].setBackgroundColor(Color.LTGRAY);
+                            button[previous].setTextColor(Color.BLACK);
+                            button[previous].setEnabled(true);
                         }
                     }
             );
