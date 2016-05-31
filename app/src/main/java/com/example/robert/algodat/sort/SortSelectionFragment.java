@@ -54,6 +54,8 @@ public class SortSelectionFragment extends Fragment {
             button[i] = (Button) rootView.findViewById(idArray[i]);
             button[i].setText(String.format("%s", randNums[i]));
             button[i].setBackgroundColor(Color.LTGRAY);
+            button[i].setTextSize(17);
+            button[i].setPadding(1,0,1,0);
         }
 
         button[next].setBackgroundColor(Color.RED);
@@ -108,8 +110,8 @@ public class SortSelectionFragment extends Fragment {
                                 button[next].setText(button[pos].getText());
                                 button[pos].setText(help);
                                 button[next].setEnabled(false);
-                                button[next].setBackgroundColor(Color.BLACK);
-                                button[next].setTextColor(ColorStateList.valueOf(Color.GREEN));
+                                button[next].setBackgroundColor(Color.GREEN);
+                                button[next].setTextColor(ColorStateList.valueOf(Color.BLACK));
                                 button[++next].setBackgroundColor(Color.RED);
                                 button[next].setTextColor(ColorStateList.valueOf(Color.WHITE));
 
