@@ -64,7 +64,6 @@ public class SortSelectionFragment extends Fragment {
         for(int l = 0; l < button.length && l <= next; l++) {
             for (int i = 0; i < button.length; i++) {
                 final int k = i;
-
                 button[k].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -110,8 +109,7 @@ public class SortSelectionFragment extends Fragment {
                                 button[next].setText(button[pos].getText());
                                 button[pos].setText(help);
                                 button[next].setEnabled(false);
-                                button[next].setBackgroundColor(Color.GREEN);
-                                button[next].setTextColor(ColorStateList.valueOf(Color.BLACK));
+                                button[next].setBackgroundColor(getResources().getColor(R.color.colorCorrect));
                                 button[++next].setBackgroundColor(Color.RED);
                                 button[next].setTextColor(ColorStateList.valueOf(Color.WHITE));
 
