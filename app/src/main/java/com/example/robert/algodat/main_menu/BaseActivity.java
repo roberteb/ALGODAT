@@ -22,6 +22,7 @@ import android.widget.ListView;
 import com.example.robert.algodat.ProfileActivity;
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.SettingsActivity;
+import com.example.robert.algodat.sort.SortActivity;
 
 import java.util.Map;
 
@@ -48,12 +49,12 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             }
         };
         //drawerLayout.setDrawerListener(drawerToggle);
-      //  drawerLayout.setDrawerListener(drawerToggle);
+        //drawerLayout.setDrawerListener(drawerToggle);
 
         navigationView = (NavigationView) findViewById(R.id.design_navigation_view);
         LayoutInflater.from(this).inflate(R.layout.navigation_drawer_header, navigationView);
-        //navigationView.setNavigationItemSelectedListener(this);
-       // drawerToggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+
         final Context context = this;
 
     }
@@ -117,11 +118,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.home_id: {
                 Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             }
             case R.id.profile_id: {
-                Intent intent = new Intent(this, ProfileActivity.class);
+                Intent intent = new Intent(this, SortActivity.class);
+                startActivity(intent);
                 break;
             }
             case R.id.feedback_id: {
