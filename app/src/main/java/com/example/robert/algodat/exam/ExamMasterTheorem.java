@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,6 +27,9 @@ public class ExamMasterTheorem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_master_theorem);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.setTitle("Exam");
 
         firstArrow = (ImageView) findViewById(R.id.firstExamArrow);
         firstArrow.setImageResource(R.drawable.arrow_seen);
@@ -71,5 +74,23 @@ public class ExamMasterTheorem extends AppCompatActivity {
                 startActivity(mainIntent);
             }
         });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        //Up button
+        super.onBackPressed();
+
+        return true;
     }
 }
