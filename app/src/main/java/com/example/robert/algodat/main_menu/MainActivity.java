@@ -2,7 +2,6 @@ package com.example.robert.algodat.main_menu;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -28,12 +27,12 @@ import com.example.robert.algodat.ProfileActivity;
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.SettingsActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     //Navigation Drawer Hamburger Icon
-    DrawerLayout drawerLayout;
+   /* DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView navigationView;
+    NavigationView navigationView;*/
     FragmentTransaction fragmentTransaction;
 
     /**
@@ -54,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.onCreateDrawer();
         setContentView(R.layout.main_activity);
-        //set Default Setting values
-        PreferenceManager.setDefaultValues(this,R.xml.pref_headers,false);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,74 +71,19 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        // Navigation Drawer // Funktioniert noch nicht
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        navigationView=(NavigationView)findViewById(R.id.design_navigation_view);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawer_open, R.string.drawer_close);
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
-
-       // fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        //fragmentTransaction.add(R.id.main_content, new FragmentPractice() );
-        //fragmentTransaction.commit();
 
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                getActivityByItem(item);
-                return true;
-            }
-
-        });
-
-
-
-    }
-
-    public Class getActivityByItem(MenuItem item){
-        Class c= null;
-        switch (item.getItemId()) {
-            case R.id.home_id: {
-                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main_content, new FragmentLearn());
-                fragmentTransaction.commit();
-                item.setChecked(true);
-                drawerLayout.closeDrawers();
-                break;
-            }
-            case R.id.profile_id: {
-                c=ProfileActivity.class;
-                break;
-            }
-            case R.id.feedback_id: {
-                c=ProfileActivity.class;
-                drawerLayout.closeDrawers();
-                break;
-            }
-            case R.id.settings_id: {
-                c=SettingsActivity.class;
-                drawerLayout.closeDrawers();
-                break;
-            }
-            case R.id.invite_friends_id: {
-                c=SettingsActivity.class;
-                drawerLayout.closeDrawers();
-                break;
-            }
-        }
-        return c;
     }
 
 
     // Navigation Drawer Hamburger Icon
     @Override
-    protected void onPostCreate(Bundle savedInstanceState)
+   protected void onPostCreate(Bundle savedInstanceState)
     {
         super.onPostCreate(savedInstanceState);
-        actionBarDrawerToggle.syncState();
     }
 
-    @Override
+   // @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);

@@ -8,8 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.main_menu.BaseActivity;
 
-public class SortActivity extends AppCompatActivity {
+public class SortActivity extends BaseActivity {
 
     SortListFragment sortListFragment;
 
@@ -17,10 +18,11 @@ public class SortActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sort_activity);
+        super.onCreateDrawer();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         add();
 
@@ -57,4 +59,10 @@ public class SortActivity extends AppCompatActivity {
 
         return true;
     }
+
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
 }
