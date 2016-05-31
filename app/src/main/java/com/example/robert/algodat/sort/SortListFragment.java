@@ -19,9 +19,9 @@ public class SortListFragment extends Fragment {
     Fragment frag;
 
     final static int sortIcons[] =
-    { R.mipmap.ic_hash, R.mipmap.ic_launcher, R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher
+    { R.mipmap.ic_sort, R.mipmap.ic_sort, R.mipmap.ic_sort,
+            R.mipmap.ic_sort, R.mipmap.ic_sort, R.mipmap.ic_sort,
+            R.mipmap.ic_sort, R.mipmap.ic_sort, R.mipmap.ic_sort
     };
 
     final String[] sortText = { "Selection Sort", "Quick Sort", "Merge Sort",
