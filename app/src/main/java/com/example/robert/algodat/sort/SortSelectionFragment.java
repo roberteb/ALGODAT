@@ -70,7 +70,7 @@ public class SortSelectionFragment extends Fragment {
                         if (k > next) {
                             wrongTextView.setVisibility(View.INVISIBLE);
                             okButton.setEnabled(true);
-                            okButton.setText("Switch with " + button[k].getText() + " ?");
+                            okButton.setText("Switch " + button[k].getText() + " with " + button[next].getText() + " ?");
                             pos = k;
                             if(previous != -1) {
                                 button[k].setBackgroundColor(Color.RED);
@@ -109,10 +109,9 @@ public class SortSelectionFragment extends Fragment {
                                 button[next].setText(button[pos].getText());
                                 button[pos].setText(help);
                                 button[next].setEnabled(false);
-                                button[next].setBackgroundColor(getResources().getColor(R.color.colorCorrect));
+                                button[next].setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorCorrect));
                                 button[++next].setBackgroundColor(Color.RED);
                                 button[next].setTextColor(ColorStateList.valueOf(Color.WHITE));
-
                             }else
                                 wrongTextView.setVisibility(View.VISIBLE);
 
