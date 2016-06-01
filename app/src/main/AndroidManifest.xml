@@ -69,7 +69,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.sort.SortActivity" />
         </activity>
-        <activity android:name=".main_menu.BaseActivity"></activity>
+        <activity android:name=".main_menu.BaseActivity" />
+        <activity android:name=".exam.ExamActivity"></activity>
     </application>
 
 </manifest>

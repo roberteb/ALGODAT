@@ -12,6 +12,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.exam.ExamActivity;
 import com.example.robert.algodat.exam.ExamMasterTheorem;
 
 public class FragmentExam extends Fragment {
@@ -66,7 +67,7 @@ public class FragmentExam extends Fragment {
         examModeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainIntent = new Intent(getActivity(), ExamMasterTheorem.class);
+                Intent mainIntent = new Intent(getActivity(), ExamActivity.class);
                 startActivity(mainIntent);
             }
         });
