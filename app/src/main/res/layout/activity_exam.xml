@@ -111,16 +111,38 @@
             android:layout_height="wrap_content"
             android:id="@+id/helpImageView"
             android:layout_toRightOf="@+id/discussionImageView"
-            android:src="@drawable/question"
-            android:layout_marginLeft="20dp" />
+            android:src="@drawable/question" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shareImageView"
             android:layout_toRightOf="@+id/helpImageView"
-            android:src="@drawable/share"
-            android:layout_marginLeft="20dp" />
+            android:src="@drawable/share" />
+
+        <TextView
+            android:text="Discussion"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/discussionTextView"/>
+
+        <TextView
+            android:text="Help"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/helpTextView" />
+
+        <TextView
+            android:text="Share"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/shareTextView" />
     </GridLayout>
 
 </RelativeLayout>

@@ -4,18 +4,30 @@
     android:layout_height="match_parent"
     tools:context=".exam.ExamFragmentMasterTheorem">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/masterTitleTextView"
+        android:text="@string/title_master_theorem"
+        android:layout_marginTop="10dp"
+        android:textColor="#010101"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/masterTitleTextView">
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/masterCheckFirst"
             android:layout_below="@+id/masterTitleTextView"
+            android:buttonTint="@color/black"
             android:text="first" />
 
         <CheckBox
@@ -23,6 +35,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/masterCheckSecond"
             android:layout_below="@+id/masterCheckFirst"
+            android:buttonTint="@color/black"
             android:text="second" />
 
         <CheckBox
@@ -30,14 +43,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/masterCheckThird"
             android:layout_below="@+id/masterCheckSecond"
+            android:buttonTint="@color/black"
             android:text="third" />
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/masterTitleTextView"
-        android:text="@string/title_master_theorem"
-        android:layout_marginTop="10dp" />
 
 </FrameLayout>
