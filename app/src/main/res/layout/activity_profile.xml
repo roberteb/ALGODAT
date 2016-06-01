@@ -35,8 +35,10 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/avatar"
-                    android:id="@+id/profileAvatar" />
+                    android:src="@drawable/bigavatar"
+                    android:id="@+id/profileAvatar"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    />
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
