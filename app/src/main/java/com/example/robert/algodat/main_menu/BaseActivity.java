@@ -63,7 +63,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (drawerToggle.onOptionsItemSelected(item)) {
-            goToNavDrawerItem(item.getItemId());
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -89,7 +88,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         super.setContentView(layoutResID);
         onCreateDrawer();
     }
-    private void goToNavDrawerItem(int item) {
+   /* private void goToNavDrawerItem(int item) {
         Intent intent;
         switch (item) {
             case R.id.home_id: {
@@ -111,34 +110,46 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 break;
             }
         }
-    }
+    }*/
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home_id: {
                 Intent intent = new Intent(this, MainActivity.class);
+                if(getClass()==MainActivity.class){
+                    drawerLayout.closeDrawers();
+                    break;
+                }
                 startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             }
             case R.id.profile_id: {
-                Intent intent = new Intent(this, SortActivity.class);
+                Intent intent = new Intent(this, ProfileActivity.class);
+                if(getClass()==ProfileActivity.class){
+                    drawerLayout.closeDrawers();
+                    break;
+                }
+                drawerLayout.closeDrawers();
                 startActivity(intent);
                 break;
             }
             case R.id.feedback_id: {
                 Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             }
             case R.id.settings_id: {
                 Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             }
             case R.id.invite_friends_id: {
                 Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             }
