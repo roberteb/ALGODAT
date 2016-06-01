@@ -41,11 +41,11 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         drawerToggle = new ActionBarDrawerToggle((AppCompatActivity) this, drawerLayout, toolbar, R.string.drawer_open,R.string.drawer_close) {
             public void onDrawerClosed(View view) {
-               super.onDrawerClosed(view);
+                super.onDrawerClosed(view);
             }
 
             public void onDrawerOpened(View drawerView) {
-               super.onDrawerClosed(drawerView);
+                super.onDrawerClosed(drawerView);
             }
         };
         //drawerLayout.setDrawerListener(drawerToggle);
