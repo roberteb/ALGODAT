@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:id="@+id/viewSwitcher"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/holo_orange_light"
+        android:background="@android:color/holo_blue_light"
         android:layout_above="@+id/linearLayout2">
 
         <RelativeLayout
