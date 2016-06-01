@@ -4,7 +4,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_master_theorem">Master Theorem</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
