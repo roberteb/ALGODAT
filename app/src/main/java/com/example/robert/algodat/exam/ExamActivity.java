@@ -51,7 +51,7 @@ public class ExamActivity extends AppCompatActivity {
 
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
-        new CountDownTimer(5400000, 1000) {
+        new CountDownTimer(3600000, 1000) {
             private long seconds = 60;
 
             public void onTick(long millisUntilFinished) {
