@@ -44,8 +44,8 @@ public class FragmentPractice extends Fragment {
         final String[] textPractice = { "Hash Tables", "Sorting Algorithms", "Master Theorem", "Graphs"};
 
         //icons for GridView
-        int iconsPractice[] = { R.mipmap.ic_learn02, R.mipmap.ic_learn01,
-                                R.mipmap.ic_learn04, R.mipmap.ic_learn06
+        int iconsPractice[] = { R.mipmap.ic_practice01, R.mipmap.ic_practice02,
+                                R.mipmap.ic_practice03, R.mipmap.ic_learn06
                                 };
 
 
