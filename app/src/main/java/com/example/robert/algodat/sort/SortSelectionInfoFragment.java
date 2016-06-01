@@ -102,7 +102,7 @@ public class SortSelectionInfoFragment extends Fragment {
         );
 
         discussionButton = (Button)rootView.findViewById(R.id.discussionButton);
-        discussionButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.mipmap.ic_hash, 0, 0);
+        discussionButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.comments, 0, 0);
         discussionButton.setPadding(0, 30, 0, 0);
 
         sortGoButton = (Button)rootView.findViewById(R.id.sortGoButton);
