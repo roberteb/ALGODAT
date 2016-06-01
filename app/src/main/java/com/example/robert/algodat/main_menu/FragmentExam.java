@@ -56,7 +56,7 @@ public class FragmentExam extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     examModeIcon.setImageResource(R.mipmap.ic_hard);
-                    modeTextView.setText("HARD");
+                    modeTextView.setText("DIFFICULT");
                 } else {
                     examModeIcon.setImageResource(R.mipmap.ic_easy);
                     modeTextView.setText("EASY");

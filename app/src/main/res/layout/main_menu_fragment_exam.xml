@@ -8,27 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".main_menu.MainActivity$PlaceholderFragment">
 
-    <Switch
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Mode:"
-        android:id="@+id/examModeSwitch"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="97dp"
-        android:checked="false"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="EASY"
         android:id="@+id/modeTextView"
+        android:layout_marginTop="43dp"
+        android:textSize="15dp"
         android:layout_alignTop="@+id/examModeSwitch"
-        android:layout_toStartOf="@+id/tryLuckTextView"
-        android:layout_marginTop="43dp" />
+        android:layout_alignStart="@+id/examModeSwitch" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -48,6 +37,18 @@
         android:id="@+id/tryLuckTextView"
         android:layout_below="@id/examModeIcon"
         android:layout_centerHorizontal="true" />
+
+    <Switch
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Exam Mode:"
+        android:id="@+id/examModeSwitch"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="97dp"
+        android:checked="false"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
 
