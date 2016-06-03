@@ -8,10 +8,11 @@
         <item name="colorAccent">@color/colorCorrect</item>
         <item name="android:colorBackground">@color/primary_material_light</item>
         <item name="android:statusBarColor">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/abc_primary_text_material_light</item>
+        <item name="android:textColorPrimary">@color/abc_search_url_text_pressed</item>
         <item name="android:textColorPrimaryInverse">@color/abc_primary_text_disable_only_material_dark</item>
-        <item name="android:textColorSecondary">@color/abc_secondary_text_material_dark</item>
+        <item name="android:textColorSecondary">@color/background_floating_material_dark</item>
         <item name="android:colorForeground">@color/dim_foreground_material_light</item>
+        <item name="android:textColorSecondaryInverse">@color/abc_color_highlight_material</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

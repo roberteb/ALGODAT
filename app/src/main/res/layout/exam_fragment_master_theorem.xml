@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/masterCheckFirst"
             android:layout_below="@+id/masterTitleTextView"
-            android:buttonTint="@color/black"
             android:text="first" />
 
         <CheckBox
@@ -35,7 +34,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/masterCheckSecond"
             android:layout_below="@+id/masterCheckFirst"
-            android:buttonTint="@color/black"
             android:text="second" />
 
         <CheckBox
@@ -43,7 +41,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/masterCheckThird"
             android:layout_below="@+id/masterCheckSecond"
-            android:buttonTint="@color/black"
             android:text="third" />
     </LinearLayout>
 

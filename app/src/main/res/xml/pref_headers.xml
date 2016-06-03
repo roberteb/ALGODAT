@@ -18,5 +18,9 @@
         android:key="offline"
         android:icon="@drawable/ic_sync_black_24dp"
         android:title="Offline- Studying" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="test"
+        android:title="TestCheckbox"/>
 
 </PreferenceScreen>
