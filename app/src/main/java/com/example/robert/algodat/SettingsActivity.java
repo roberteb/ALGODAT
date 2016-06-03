@@ -52,6 +52,7 @@ public class SettingsActivity extends PreferenceActivity {
     }
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+
         getDelegate().onPostCreate(savedInstanceState);
     }
     private AppCompatDelegate getDelegate() {

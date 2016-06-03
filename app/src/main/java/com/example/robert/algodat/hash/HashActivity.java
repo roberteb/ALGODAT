@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.main_menu.BaseActivity;
 
 public class HashActivity extends AppCompatActivity {
 
