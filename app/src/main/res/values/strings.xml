@@ -168,5 +168,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_sort_selection">SortSelection</string>
+    <string name="title_activity_exam">Exam</string>
 
 </resources>

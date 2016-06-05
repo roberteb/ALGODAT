@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.exam.ExamActivity;
-import com.example.robert.algodat.exam.ExamMasterTheorem;
 
 public class FragmentExam extends Fragment {
     /**

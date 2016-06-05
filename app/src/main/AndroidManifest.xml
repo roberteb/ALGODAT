@@ -8,8 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <activity
             android:name=".main_menu.SplashActivity"
             android:label="@string/app_name"
@@ -20,23 +18,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-
         <activity
             android:name=".main_menu.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
+            android:noHistory="true"
             android:parentActivityName=".main_menu.MainActivity"
-            android:screenOrientation="portrait"
-            android:noHistory="true" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main_menu.MainActivity" />
@@ -62,24 +55,16 @@
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
         <activity
-            android:name=".exam.ExamMasterTheorem"
-            android:screenOrientation="portrait"
-            />
-        <activity
             android:name=".ProfileActivity"
             android:label="Profile"
-            android:parentActivityName=".main_menu.MainActivity"
             android:noHistory="true"
+            android:parentActivityName=".main_menu.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
         </activity>
-        <activity
-            android:name=".exam.ExamSelectionSort"
-            android:screenOrientation="portrait" />
-
         <activity
             android:name=".sort.SortSelectionActivity"
             android:label="@string/title_activity_sort_selection"
@@ -93,10 +78,13 @@
         <activity android:name=".main_menu.BaseActivity" />
         <activity
             android:name=".exam.ExamActivity"
-            android:screenOrientation="portrait"
-            ></activity>
+            android:label="@string/title_activity_exam"
+            android:parentActivityName=".main_menu.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.robert.algodat.main_menu.MainActivity" />
+        </activity>
     </application>
-
-
 
 </manifest>
