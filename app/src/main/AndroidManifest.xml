@@ -80,7 +80,8 @@
             android:name=".exam.ExamActivity"
             android:label="@string/title_activity_exam"
             android:parentActivityName=".main_menu.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />

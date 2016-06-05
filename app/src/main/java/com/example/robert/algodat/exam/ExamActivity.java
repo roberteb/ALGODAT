@@ -9,6 +9,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ViewSwitcher;
 
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.sort.SortSelectionFragment;
@@ -17,11 +19,17 @@ import com.example.robert.algodat.sort.SortSelectionFragment;
 public class ExamActivity extends AppCompatActivity {
 
     SortSelectionFragment sortSelectionFragment;
+    FragmentTransaction ft;
+    Button examNextButton;
+    ViewSwitcher examViewSwitcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_activity);
+
+        examNextButton = (Button) findViewById(R.id.examNextButton);
+        examViewSwitcher = (ViewSwitcher) findViewById(R.id.examViewSwitcher);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -29,9 +37,20 @@ public class ExamActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sortSelectionFragment = new SortSelectionFragment();
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.exam_view1, sortSelectionFragment);
         ft.commit();
+
+        examNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                examViewSwitcher.showNext();
+            }
+        });
+//        hash
+
+
+
     }
 
 }
