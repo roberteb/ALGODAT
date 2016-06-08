@@ -92,4 +92,20 @@ public class UserDAO extends Activity {
         user.incrementLearned();
         save();
     }
+    public void increaseLevel(){
+        user.setLvl(user.getLvl()+1);
+        save();
+    }
+    public void increaseExamXp(int xp){
+        user.setExamXp(user.getExamXp()+xp);
+        save();
+    }
+    public void increasePracticeXp(int xp){
+        user.setPracticeXp(user.getPracticeXp()+xp);
+        save();
+    }
+    public void increaseLearnXp(int xp){
+        user.setLearnXp(user.getLearnXp()+xp);
+        save();
+    }
 }

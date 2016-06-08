@@ -10,6 +10,33 @@ public class User {
     private int madeExams;
     private int madePractices;
     private int learned;
+    private int examXp;
+    private int learnXp;
+    private int practiceXp;
+
+    public int getExamXp() {
+        return examXp;
+    }
+
+    public void setExamXp(int examXp) {
+        this.examXp = examXp;
+    }
+
+    public int getLearnXp() {
+        return learnXp;
+    }
+
+    public void setLearnXp(int learnXp) {
+        this.learnXp = learnXp;
+    }
+
+    public int getPracticeXp() {
+        return practiceXp;
+    }
+
+    public void setPracticeXp(int practiceXp) {
+        this.practiceXp = practiceXp;
+    }
 
     public User(){
         this.name="Anonymous";
@@ -18,6 +45,9 @@ public class User {
         madePractices=0;
         learned=0;
         lvl=0;
+        examXp=0;
+        learnXp=0;
+        practiceXp=0;
     }
 
     public String getName() {
