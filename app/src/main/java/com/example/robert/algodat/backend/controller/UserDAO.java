@@ -7,6 +7,7 @@ import com.example.robert.algodat.backend.model.User;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -18,14 +19,16 @@ import java.util.IllegalFormatCodePointException;
 /**
  * Created by chris on 08.06.2016.
  */
-public class UserDAO extends Activity {
-   private String filename="User";
+public class UserDAO {
+   private String filename="User.txt";
    private User user;
+   private Context context;
 
 
-    public UserDAO(){
+    public UserDAO(Context c){
         this.user=new User();
-        File file = new File(getFilesDir(), filename);
+        context=c;
+        File file = new File(context.getFilesDir(), filename);
         if(file.exists()){
             read();
         }
@@ -48,34 +51,34 @@ public class UserDAO extends Activity {
     }
 
     public void save(){
-        File file = new File(getFilesDir(), filename);
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        FileOutputStream fos = null;
         try {
-           ObjectOutputStream oOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-           oOutputStream.writeObject(user);
-            oOutputStream.close();
-        } catch (Exception e) {
+            fos = context.openFileOutput(filename, Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(this);
+            os.close();
+            fos.close();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-
+        catch (IOException e){
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
     public void read(){
-        ObjectInputStream ois= null;
-        File file=new File(getFilesDir(), filename);
-        if (!file.exists()) {
-          return;
-        }
         try {
-            ois = new ObjectInputStream(new FileInputStream(file));
-            user = (User) ois.readObject();
-            ois.close();
-        }catch (Exception e){
+            FileInputStream fis = context.openFileInput(filename);
+            ObjectInputStream is = null;
+            is = new ObjectInputStream(fis);
+            User user= (User) is.readObject();
+            is.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }

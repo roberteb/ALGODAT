@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.backend.controller.LevelSystem;
 import com.example.robert.algodat.main_menu.BaseActivity;
 
 public class ProfileActivity extends BaseActivity {
@@ -21,6 +22,7 @@ public class ProfileActivity extends BaseActivity {
     int examStatus=0;
     int practiceStatus=0;
     private Handler handler= new Handler();
+    private LevelSystem levelSystem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,10 @@ public class ProfileActivity extends BaseActivity {
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        levelSystem= new LevelSystem(this);
+        System.out.println(levelSystem.getUserName());
+        levelSystem.finishesLearn(13);
+        System.out.println(levelSystem.getSumXp());
 
 
 

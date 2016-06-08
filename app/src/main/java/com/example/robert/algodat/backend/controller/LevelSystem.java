@@ -1,6 +1,7 @@
 package com.example.robert.algodat.backend.controller;
 
 import android.app.Activity;
+import android.content.Context;
 
 import com.example.robert.algodat.backend.model.User;
 
@@ -17,8 +18,12 @@ import java.io.ObjectOutputStream;
 public class LevelSystem {
     UserDAO userDAO;
 
-    public LevelSystem() {
-        this.userDAO= new UserDAO();
+    public UserDAO getUserDAO() {
+        return userDAO;
+    }
+
+    public LevelSystem(Context context) {
+        this.userDAO= new UserDAO(context);
     }
 
     /*

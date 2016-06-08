@@ -1,9 +1,11 @@
 package com.example.robert.algodat.backend.model;
 
+import java.io.Serializable;
+
 /**
  * Created by chris on 08.06.2016.
  */
-public class User {
+public class User implements Serializable {
     private String name;
     private String password;
     private int lvl;
