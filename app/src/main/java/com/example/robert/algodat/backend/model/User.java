@@ -13,6 +13,7 @@ public class User {
     private int examXp;
     private int learnXp;
     private int practiceXp;
+    private int nxtLvlXp;
 
     public int getExamXp() {
         return examXp;
@@ -48,6 +49,7 @@ public class User {
         examXp=0;
         learnXp=0;
         practiceXp=0;
+        nxtLvlXp=50;
     }
 
     public String getName() {
@@ -108,5 +110,17 @@ public class User {
 
     public void incrementLearned(){
         this.learned++;
+    }
+
+    public int getNxtLvlXp() {
+        return nxtLvlXp;
+    }
+
+    public void setNxtLvlXp(int nxtLvlXp) {
+        this.nxtLvlXp = nxtLvlXp;
+    }
+
+    public void increaseNxtLvlXp(){
+        nxtLvlXp=nxtLvlXp*2;
     }
 }

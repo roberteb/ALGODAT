@@ -94,6 +94,7 @@ public class UserDAO extends Activity {
     }
     public void increaseLevel(){
         user.setLvl(user.getLvl()+1);
+        user.increaseNxtLvlXp();
         save();
     }
     public void increaseExamXp(int xp){
@@ -107,5 +108,21 @@ public class UserDAO extends Activity {
     public void increaseLearnXp(int xp){
         user.setLearnXp(user.getLearnXp()+xp);
         save();
+    }
+    public int getSumXp(){
+        return user.getExamXp()+user.getLearnXp()+user.getPracticeXp();
+    }
+    public int getUserLevel(){
+        return user.getLvl();
+    }
+
+    public boolean checkLvlUp(){
+        boolean leveledUp=false;
+        while (getSumXp()>user.getNxtLvlXp()){
+            user.setLvl(user.getLvl()+1);
+            leveledUp=true;
+            }
+        save();
+        return leveledUp;
     }
 }
