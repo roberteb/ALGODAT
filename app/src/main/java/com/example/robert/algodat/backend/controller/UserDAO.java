@@ -92,17 +92,4 @@ public class UserDAO extends Activity {
         user.incrementLearned();
         save();
     }
-    public void increaseExamXp(int xp){
-       user.increaseExamXp(xp);
-        save();
-    }
-    public void increasePracticeXp(int xp){
-        user.increasePracticeXp(xp);
-
-        save();
-    }
-    public void increaseLearnXp(int xp){
-        user.increaseLearnXp(xp);
-        save();
-    }
 }

@@ -6,7 +6,7 @@ package com.example.robert.algodat.backend.model;
 public class User {
     private String name;
     private String password;
-    private Level lvl;
+    private int lvl;
     private int madeExams;
     private int madePractices;
     private int learned;
@@ -17,7 +17,7 @@ public class User {
         madeExams=0;
         madePractices=0;
         learned=0;
-        lvl= new Level();
+        lvl=0;
     }
 
     public String getName() {
@@ -36,11 +36,11 @@ public class User {
         this.password = password;
     }
 
-    public Level getLvl() {
+    public int getLvl() {
         return lvl;
     }
 
-    public void setLvl(Level lvl) {
+    public void setLvl(int lvl) {
         this.lvl = lvl;
     }
 
@@ -66,18 +66,6 @@ public class User {
 
     public void setLearned(int learned) {
         this.learned = learned;
-    }
-
-    public void increaseExamXp(int xp){
-        this.lvl.setExamXp(lvl.getExamXp()+xp);
-
-    }
-    public void increasePracticeXp(int xp){
-        this.lvl.setExamXp(lvl.getPracticeXp()+xp);
-
-    }
-    public void increaseLearnXp(int xp){
-        this.lvl.setLearnXp(lvl.getLearnXp()+xp);
     }
 
     public void incrementMadeExams(){

@@ -40,11 +40,10 @@ public class Level {
     }
 
     public int getLvl() {
-        lvl=examXp+learnXp+practiceXp/300;
         return lvl;
     }
 
-    public void setLvl() {
-        lvl=examXp+learnXp+practiceXp/300;
+    public void setLvl(int lvl){
+        this.lvl=lvl;
     }
 }
