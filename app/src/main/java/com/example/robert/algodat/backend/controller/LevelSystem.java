@@ -31,8 +31,10 @@ public class LevelSystem {
     @returns a boolean value if User levels up.
     */
     public boolean winsExam(int xp){
+        read();
         userDAO.increaseExamXp(xp);
         userDAO.incrementMadeExams();
+        save();
         return checkLvlUp();
     }
     /*
@@ -40,8 +42,10 @@ public class LevelSystem {
     returns a boolean value if User levels up.
      */
     public boolean finishesLearn(int xp){
+        read();
         userDAO.increaseLearnXp(xp);
         userDAO.incrementLearned();
+        save();
         return checkLvlUp();
     }
 
@@ -50,38 +54,55 @@ public class LevelSystem {
    returns a boolean value if User levels up.
     */
     public boolean finishesPractice(int xp){
+        read();
         userDAO.increasePracticeXp(xp);
         userDAO.incrementPractices();
+        save();
         return checkLvlUp();
     }
 
     public int getSumXp(){
+        read();
         return userDAO.getSumXp();
     }
     public int getUserLevel(){
+        read();
         return userDAO.getUserLevel();
     }
     private boolean checkLvlUp(){
+        read();
         return userDAO.checkLvlUp();
     }
     public String getUserName(){
+        read();
        return userDAO.getUser().getName();
     }
 
     public int getLevel(){
+        read();
         return userDAO.getUserLevel();
     }
 
     public int madeExams(){
+        read();
         return userDAO.getUser().getMadeExams();
     }
     public int madePractices(){
+        read();
         return userDAO.getUser().getMadePractices();
     }
     public int learnedChapters(){
+        read();
         return userDAO.getUser().getLearned();
     }
     public int getNextLevel(){
+        read();
         return userDAO.getUser().getNxtLvlXp()-getSumXp();
+    }
+    public void save(){
+        userDAO.save();
+    }
+    public void read(){
+        userDAO.read();
     }
 }

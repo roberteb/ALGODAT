@@ -1,6 +1,7 @@
 package com.example.robert.algodat.backend.controller;
 
 import android.app.Activity;
+import android.app.admin.SystemUpdatePolicy;
 import android.content.Context;
 
 import com.example.robert.algodat.backend.model.User;
@@ -30,11 +31,13 @@ public class UserDAO {
         context=c;
         File file = new File(context.getFilesDir(), filename);
         if(file.exists()){
+            System.out.println("File already exists: "+file.getAbsolutePath());
             read();
         }
     }
 
     public User getUser() {
+        read();
         return user;
     }
 
@@ -51,11 +54,12 @@ public class UserDAO {
     }
 
     public void save(){
+        System.out.println("Save User Object");
         FileOutputStream fos = null;
         try {
             fos = context.openFileOutput(filename, Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fos);
-            os.writeObject(this);
+            os.writeObject(user);
             os.close();
             fos.close();
         } catch (FileNotFoundException e) {
@@ -67,7 +71,9 @@ public class UserDAO {
             System.out.println(e.getMessage());
         }
     }
+
     public void read(){
+        System.out.println("Read User Object.");
         try {
             FileInputStream fis = context.openFileInput(filename);
             ObjectInputStream is = null;
@@ -85,32 +91,29 @@ public class UserDAO {
     }
     public void incrementMadeExams(){
         user.incrementMadeExams();
-        save();
     }
     public void incrementPractices(){
         user.incrementMadePractices();
-        save();
+
     }
     public void incrementLearned(){
         user.incrementLearned();
-        save();
     }
     public void increaseLevel(){
         user.setLvl(user.getLvl()+1);
         user.increaseNxtLvlXp();
-        save();
     }
     public void increaseExamXp(int xp){
         user.setExamXp(user.getExamXp()+xp);
-        save();
+
     }
     public void increasePracticeXp(int xp){
         user.setPracticeXp(user.getPracticeXp()+xp);
-        save();
+
     }
     public void increaseLearnXp(int xp){
         user.setLearnXp(user.getLearnXp()+xp);
-        save();
+
     }
     public int getSumXp(){
         return user.getExamXp()+user.getLearnXp()+user.getPracticeXp();
@@ -121,11 +124,12 @@ public class UserDAO {
 
     public boolean checkLvlUp(){
         boolean leveledUp=false;
-        while (getSumXp()>user.getNxtLvlXp()){
+        while (getSumXp()>=user.getNxtLvlXp()){
             user.setLvl(user.getLvl()+1);
+            user.setNxtLvlXp((int)(user.getNxtLvlXp()*1.5));
             leveledUp=true;
             }
-        save();
+
         return leveledUp;
     }
 }

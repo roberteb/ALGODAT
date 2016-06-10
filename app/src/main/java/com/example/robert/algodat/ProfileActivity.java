@@ -2,6 +2,7 @@ package com.example.robert.algodat;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -31,8 +32,14 @@ public class ProfileActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         levelSystem= new LevelSystem(this);
-        System.out.println(levelSystem.getUserName());
-        levelSystem.finishesLearn(13);
+       // System.out.println(levelSystem.getUserName());
+        levelSystem.finishesLearn(80);
+        levelSystem.finishesPractice(120);
+        levelSystem.winsExam(3000);
+        levelSystem.finishesLearn(80);
+        System.out.println("Finished Chapters: "+levelSystem.learnedChapters());
+        System.out.println("Level: "+levelSystem.getLevel());
+        System.out.println("Next level: "+levelSystem.getNextLevel());
         System.out.println(levelSystem.getSumXp());
 
 

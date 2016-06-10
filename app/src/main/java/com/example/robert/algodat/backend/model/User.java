@@ -51,7 +51,7 @@ public class User implements Serializable {
         examXp=0;
         learnXp=0;
         practiceXp=0;
-        nxtLvlXp=50;
+        nxtLvlXp=100;
     }
 
     public String getName() {
