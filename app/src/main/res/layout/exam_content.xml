@@ -45,34 +45,134 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="3"
-        android:columnCount="3"
+        android:rowCount="4"
+        android:columnCount="22"
         android:id="@+id/bottomExamGridLayout"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/holo_red_dark">
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discussionImageView"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/comments"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/helpImageView"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/question"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shareImageView"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/share"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discussion"
+            android:id="@+id/discussionTextView"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help"
+            android:id="@+id/helpTextView"
+            android:layout_row="1"
+            android:layout_column="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:id="@+id/shareTextView"
+            android:layout_row="1"
+            android:layout_column="2" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
-            android:id="@+id/examNextButton" />
+            android:id="@+id/examNextButton"
+            android:layout_row="0"
+            android:layout_column="21" />
+
     </GridLayout>
 
-    <LinearLayout
+    <GridLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/topProgressLinearLayout"
-        android:background="@android:color/holo_blue_dark">
+        android:id="@+id/topProgressLinearLayout">
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button7" />
-    </LinearLayout>
+            android:id="@+id/firstArrowImageView"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/arrow_seen"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/secondArrowImageView"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:src="@drawable/arrow_unseen"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/thirdArrowImageView"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:src="@drawable/arrow_unseen"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fourthArrowImageView"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:src="@drawable/arrow_unseen"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fifthArrowImageView"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:src="@drawable/arrow_unseen"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/timerTextView"
+            android:layout_column="14"
+            android:layout_row="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerImageView"
+            android:layout_column="14"
+            android:layout_row="0"
+            android:src="@drawable/timer"/>
+
+    </GridLayout>
 
 </RelativeLayout>
