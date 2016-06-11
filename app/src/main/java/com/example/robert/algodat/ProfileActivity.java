@@ -40,7 +40,7 @@ public class ProfileActivity extends BaseActivity {
         System.out.println("Finished Chapters: "+levelSystem.learnedChapters());
         System.out.println("Level: "+levelSystem.getLevel());
         System.out.println("Next level: "+levelSystem.getNextLevel());
-        System.out.println(levelSystem.getSumXp());
+        System.out.println("All Xps: "+levelSystem.getSumXp());
 
 
 

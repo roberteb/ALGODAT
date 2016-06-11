@@ -78,7 +78,7 @@ public class UserDAO {
             FileInputStream fis = context.openFileInput(filename);
             ObjectInputStream is = null;
             is = new ObjectInputStream(fis);
-            User user= (User) is.readObject();
+            user= (User) is.readObject();
             is.close();
             fis.close();
         } catch (IOException e) {

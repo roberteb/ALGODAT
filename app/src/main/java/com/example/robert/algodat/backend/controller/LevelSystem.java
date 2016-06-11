@@ -71,7 +71,9 @@ public class LevelSystem {
     }
     private boolean checkLvlUp(){
         read();
-        return userDAO.checkLvlUp();
+        boolean lvldup=userDAO.checkLvlUp();
+        save();
+        return lvldup;
     }
     public String getUserName(){
         read();
