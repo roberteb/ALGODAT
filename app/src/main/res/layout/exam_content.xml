@@ -7,10 +7,10 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <ViewSwitcher
+    <ViewFlipper
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/examViewSwitcher"
+        android:id="@+id/examViewFlipper"
         android:layout_centerHorizontal="true"
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
@@ -35,12 +35,69 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HELLO"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/examMasterLinearLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examMasterFirstLineTextView"
+                    android:text="What is the runtime of this program:"
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examMasterTheoremImageView"
+                    android:src="@drawable/mastertheorrem"
+                    android:layout_marginTop="10dp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/firstCheckBox"
+                    android:layout_below="@+id/examMasterTheoremImageView"
+                    android:text="O(log(n))"
+                    android:layout_marginTop="10dp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/secondCheckBox"
+                    android:layout_below="@+id/firstCheckBox"
+                    android:text="O(n)"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/thirdCheckBox"
+                    android:layout_below="@+id/secondCheckBox"
+                    android:text="O(n^2)"/>
+
+            </LinearLayout>
+
         </RelativeLayout>
-    </ViewSwitcher>
+
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/exam_view3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layout="@layout/sort_list_fragment"
+            android:layout_below="@+id/topProgressLinearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/bottomExamGridLayout">
+        </FrameLayout>
+
+
+    </ViewFlipper>
 
     <GridLayout
         android:layout_width="match_parent"

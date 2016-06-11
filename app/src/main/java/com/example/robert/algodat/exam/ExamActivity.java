@@ -1,8 +1,10 @@
 package com.example.robert.algodat.exam;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -10,9 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 import android.widget.ViewSwitcher;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.sort.SortListFragment;
 import com.example.robert.algodat.sort.SortSelectionFragment;
 
 
@@ -23,10 +27,11 @@ public class ExamActivity extends AppCompatActivity {
 
     private ImageView[] arrowsImageView = new ImageView[arrowIds.length];
     private SortSelectionExamFragment sortSelectionExamFragment;
+    private SortListFragment sortListFragment;
     private FragmentTransaction ft;
     private Button examNextButton;
     private Button examBackButton;
-    private ViewSwitcher examViewSwitcher;
+    private ViewFlipper examViewFlipper;
     private TextView timerTextView;
     private int counter;
 
@@ -37,7 +42,7 @@ public class ExamActivity extends AppCompatActivity {
 
         examNextButton = (Button) findViewById(R.id.examNextButton);
         examBackButton = (Button) findViewById(R.id.examBackButton);
-        examViewSwitcher = (ViewSwitcher) findViewById(R.id.examViewSwitcher);
+        examViewFlipper = (ViewFlipper) findViewById(R.id.examViewFlipper);
 
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
@@ -47,8 +52,10 @@ public class ExamActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sortSelectionExamFragment = new SortSelectionExamFragment();
+        sortListFragment = new SortListFragment();
         ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.exam_view1, sortSelectionExamFragment);
+        ft.add(R.id.exam_view3, sortListFragment);
         ft.commit();
 
         counter = 0;
@@ -56,7 +63,7 @@ public class ExamActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (counter < 4) {
-                    examViewSwitcher.showNext();
+                    examViewFlipper.showNext();
                     counter++;
                     arrowsImageView[counter] = (ImageView) findViewById(arrowIds[counter]);
                     arrowsImageView[counter].setImageResource(R.drawable.arrow_seen);
@@ -69,13 +76,14 @@ public class ExamActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (counter > 0){
-                    examViewSwitcher.showPrevious();
+                    examViewFlipper.showPrevious();
                     arrowsImageView[counter] = (ImageView)findViewById(arrowIds[counter]);
                     arrowsImageView[counter].setImageResource(R.drawable.arrow_unseen);
                     counter--;
                 }
             }
         });
+
         new CountDownTimer(5400000, 1000) {
             private long seconds = 60;
 
@@ -110,5 +118,19 @@ public class ExamActivity extends AppCompatActivity {
         onBackPressed();
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        ExamActivity.super.onBackPressed();
+                    }
+                }).create().show();
     }
 }

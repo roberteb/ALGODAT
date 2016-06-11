@@ -169,5 +169,6 @@
     </string>
     <string name="title_activity_sort_selection">SortSelection</string>
     <string name="title_activity_exam">Exam</string>
+    <string name="title_activity_hash_list_fagment">HashTables</string>
 
 </resources>

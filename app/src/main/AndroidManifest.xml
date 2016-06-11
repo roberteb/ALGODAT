@@ -23,7 +23,7 @@
             android:name=".main_menu.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -80,11 +80,20 @@
             android:name=".exam.ExamActivity"
             android:label="@string/title_activity_exam"
             android:parentActivityName=".main_menu.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.robert.algodat.main_menu.MainActivity" />
+        </activity>
+        <activity
+            android:name=".hash.HashListFragment"
+            android:label="@string/title_activity_hash_list_fagment"
+            android:parentActivityName=".hash.HashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.robert.algodat.hash.HashActivity" />
         </activity>
     </application>
 
