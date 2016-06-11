@@ -1,15 +1,8 @@
 package com.example.robert.algodat.exam;
 
-import android.content.DialogInterface;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -29,7 +22,7 @@ public class ExamActivity extends AppCompatActivity {
             R.id.thirdArrowImageView, R.id.fourthArrowImageView, R.id.fifthArrowImageView };
 
     private ImageView[] arrowsImageView = new ImageView[arrowIds.length];
-    private SortSelectionFragment sortSelectionFragment;
+    private SortSelectionExamFragment sortSelectionExamFragment;
     private FragmentTransaction ft;
     private Button examNextButton;
     private Button examBackButton;
@@ -53,9 +46,9 @@ public class ExamActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        sortSelectionFragment = new SortSelectionFragment();
+        sortSelectionExamFragment = new SortSelectionExamFragment();
         ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.exam_view1, sortSelectionFragment);
+        ft.add(R.id.exam_view1, sortSelectionExamFragment);
         ft.commit();
 
         counter = 0;
