@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.backend.controller.LevelSystem;
@@ -20,32 +21,40 @@ public class ProfileActivity extends BaseActivity {
 
     private ProgressBar progressbarExams;
     private ProgressBar progressbarPractice;
+    private ProgressBar levelProgress;
     int examStatus=0;
     int practiceStatus=0;
     private Handler handler= new Handler();
     private LevelSystem levelSystem;
+    private TextView levelText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         levelSystem= new LevelSystem(this);
+        toolbar.setTitle(levelSystem.getUserName());
+        setSupportActionBar(toolbar);
+        levelText=(TextView) findViewById(R.id.lvlValue);
+        String lvl= String.format("%s",levelSystem.getLevel());
+        levelText.setText(lvl);
        // System.out.println(levelSystem.getUserName());
-        levelSystem.finishesLearn(80);
+        /*levelSystem.finishesLearn(80);
         levelSystem.finishesPractice(120);
-        levelSystem.winsExam(3000);
-        levelSystem.finishesLearn(80);
+        levelSystem.winsExam(3000);*/
+
         System.out.println("Finished Chapters: "+levelSystem.learnedChapters());
         System.out.println("Level: "+levelSystem.getLevel());
         System.out.println("Next level: "+levelSystem.getNextLevel());
         System.out.println("All Xps: "+levelSystem.getSumXp());
 
 
-
+        levelProgress=(ProgressBar) findViewById(R.id.LevelProgress);
         progressbarExams = (ProgressBar) findViewById(R.id.progressExams);
         progressbarPractice = (ProgressBar) findViewById(R.id.progressPractice);
+        levelProgress.setMax(levelSystem.getSumXp()+levelSystem.getNextLevel());
+        levelProgress.setProgress(levelSystem.getSumXp());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
