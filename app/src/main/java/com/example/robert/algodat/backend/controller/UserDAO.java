@@ -37,7 +37,6 @@ public class UserDAO {
     }
 
     public User getUser() {
-        read();
         return user;
     }
 
@@ -122,6 +121,13 @@ public class UserDAO {
         return user.getLvl();
     }
 
+    public int[] getMadeSorts(){
+        return user.getMadeSorts();
+    }
+    public void increaseMadeSorts(int chapter){
+        user.increaseSortChapter(chapter);
+    }
+
     public boolean checkLvlUp(){
         boolean leveledUp=false;
         while (getSumXp()>=user.getNxtLvlXp()){
@@ -131,5 +137,14 @@ public class UserDAO {
             }
 
         return leveledUp;
+    }
+    public int getPracticeXp(){
+        return user.getPracticeXp();
+    }
+    public int getExamXp(){
+        return user.getExamXp();
+    }
+    public int getLearnXp(){
+        return user.getLearnXp();
     }
 }

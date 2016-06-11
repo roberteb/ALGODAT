@@ -79,4 +79,9 @@ public class ProfileActivity extends BaseActivity {
          getSupportActionBar().setDisplayHomeAsUpEnabled(true);
      }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        levelSystem.save();
+    }
 }

@@ -31,10 +31,10 @@ public class LevelSystem {
     @returns a boolean value if User levels up.
     */
     public boolean winsExam(int xp){
-        read();
+
         userDAO.increaseExamXp(xp);
         userDAO.incrementMadeExams();
-        save();
+
         return checkLvlUp();
     }
     /*
@@ -42,10 +42,10 @@ public class LevelSystem {
     returns a boolean value if User levels up.
      */
     public boolean finishesLearn(int xp){
-        read();
+
         userDAO.increaseLearnXp(xp);
         userDAO.incrementLearned();
-        save();
+
         return checkLvlUp();
     }
 
@@ -54,51 +54,51 @@ public class LevelSystem {
    returns a boolean value if User levels up.
     */
     public boolean finishesPractice(int xp){
-        read();
+
         userDAO.increasePracticeXp(xp);
         userDAO.incrementPractices();
-        save();
+
         return checkLvlUp();
     }
 
     public int getSumXp(){
-        read();
+
         return userDAO.getSumXp();
     }
     public int getUserLevel(){
-        read();
+
         return userDAO.getUserLevel();
     }
     private boolean checkLvlUp(){
-        read();
+
         boolean lvldup=userDAO.checkLvlUp();
-        save();
+
         return lvldup;
     }
     public String getUserName(){
-        read();
+
        return userDAO.getUser().getName();
     }
 
     public int getLevel(){
-        read();
+
         return userDAO.getUserLevel();
     }
 
     public int madeExams(){
-        read();
+
         return userDAO.getUser().getMadeExams();
     }
     public int madePractices(){
-        read();
+
         return userDAO.getUser().getMadePractices();
     }
     public int learnedChapters(){
-        read();
+
         return userDAO.getUser().getLearned();
     }
     public int getNextLevel(){
-        read();
+
         return userDAO.getUser().getNxtLvlXp()-getSumXp();
     }
     public void save(){
@@ -107,4 +107,25 @@ public class LevelSystem {
     public void read(){
         userDAO.read();
     }
+
+    public boolean madeSortLevelInChapter(int chapter, int xp){
+        boolean checklvl;
+
+        userDAO.increasePracticeXp(xp);
+        userDAO.increaseMadeSorts(chapter);
+        checklvl=checkLvlUp();
+
+        return checklvl;
+    }
+    public int getXpFromPractice(){
+
+        return userDAO.getPracticeXp();
+    }
+    public int getXpFromExams(){
+        return userDAO.getExamXp();
+    }
+    public int getXpFromLearning(){
+        return userDAO.getLearnXp();
+    }
+
 }

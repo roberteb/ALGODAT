@@ -16,6 +16,22 @@ public class User implements Serializable {
     private int learnXp;
     private int practiceXp;
     private int nxtLvlXp;
+    private int [] madeSorts;
+
+    public int[] getMadeSorts() {
+        return madeSorts;
+    }
+
+    public void setMadeSorts(int[] madeSorts) {
+        this.madeSorts = madeSorts;
+    }
+    public void increaseSortChapter(int chapter){
+        if(chapter<madeSorts.length) {
+            madeSorts[chapter]++;
+        }else{
+            throw new RuntimeException("This Chapter does not exist!");
+        }
+    }
 
     public int getExamXp() {
         return examXp;
@@ -42,7 +58,7 @@ public class User implements Serializable {
     }
 
     public User(){
-        this.name="Anonymous";
+        this.name="User";
         this.password="0000";
         madeExams=0;
         madePractices=0;
@@ -52,6 +68,7 @@ public class User implements Serializable {
         learnXp=0;
         practiceXp=0;
         nxtLvlXp=100;
+        madeSorts= new int[6];
     }
 
     public String getName() {
