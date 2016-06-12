@@ -22,7 +22,7 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/exam_view1"
+            android:id="@+id/examSelectionFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -34,7 +34,8 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:id="@+id/examMasterRelativeLayout">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -86,15 +87,118 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/exam_view3"
+            android:id="@+id/examHashFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:layout="@layout/sort_list_fragment"
+            tools:layout="@layout/sort_selection_fragment"
             android:layout_below="@+id/topProgressLinearLayout"
             android:layout_alignParentStart="true"
             android:layout_above="@+id/bottomExamGridLayout">
         </FrameLayout>
+
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/examGraphFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layout="@layout/sort_selection_fragment"
+            android:layout_below="@+id/topProgressLinearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/bottomExamGridLayout">
+        </FrameLayout>
+
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/examMergeFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layout="@layout/sort_selection_fragment"
+            android:layout_below="@+id/topProgressLinearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/bottomExamGridLayout">
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/examResultRelativeLayout">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/examResultLinearLayout">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examResultImageView"
+                    android:src="@drawable/result"
+                    android:layout_gravity="center_horizontal" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examResultCongratulationTextView"
+                    android:text="CONGRATULATIONS"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examResultTextView_1"
+                    android:text="You have earned 3 points"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examResultTextView_2"
+                    android:text="You have earned 3 points"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15dp"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examResultTextView_3"
+                    android:text="You have earned 3 points"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examResultTextView_4"
+                    android:text="You have earned 3 points"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examTryAgainImageView"
+                    android:src="@drawable/try_again"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/examTryAgainTextView"
+                    android:text="Try Again"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="25dp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
 
 
     </ViewFlipper>

@@ -13,11 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-import android.widget.ViewSwitcher;
 
 import com.example.robert.algodat.R;
-import com.example.robert.algodat.sort.SortListFragment;
-import com.example.robert.algodat.sort.SortSelectionFragment;
 
 
 public class ExamActivity extends AppCompatActivity {
@@ -27,7 +24,7 @@ public class ExamActivity extends AppCompatActivity {
 
     private ImageView[] arrowsImageView = new ImageView[arrowIds.length];
     private SortSelectionExamFragment sortSelectionExamFragment;
-    private SortListFragment sortListFragment;
+//    private SortListFragment sortListFragment;
     private FragmentTransaction ft;
     private Button examNextButton;
     private Button examBackButton;
@@ -52,10 +49,10 @@ public class ExamActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sortSelectionExamFragment = new SortSelectionExamFragment();
-        sortListFragment = new SortListFragment();
+//        sortListFragment = new SortListFragment();
         ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.exam_view1, sortSelectionExamFragment);
-        ft.add(R.id.exam_view3, sortListFragment);
+        ft.add(R.id.examSelectionFrameLayout, sortSelectionExamFragment);
+//        ft.add(R.id.exam_view3, sortListFragment);
         ft.commit();
 
         counter = 0;
@@ -67,6 +64,12 @@ public class ExamActivity extends AppCompatActivity {
                     counter++;
                     arrowsImageView[counter] = (ImageView) findViewById(arrowIds[counter]);
                     arrowsImageView[counter].setImageResource(R.drawable.arrow_seen);
+                } else {
+                    for (counter = 0; counter < 5; counter++) {
+                        arrowsImageView[counter] = (ImageView) findViewById(arrowIds[counter]);
+                        arrowsImageView[counter].setImageResource(R.drawable.arrow_correct);
+                    }
+                    examViewFlipper.showNext();
                 }
             }
         });
@@ -75,7 +78,7 @@ public class ExamActivity extends AppCompatActivity {
         examBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (counter > 0){
+                if (counter > 0 && counter < 5){
                     examViewFlipper.showPrevious();
                     arrowsImageView[counter] = (ImageView)findViewById(arrowIds[counter]);
                     arrowsImageView[counter].setImageResource(R.drawable.arrow_unseen);

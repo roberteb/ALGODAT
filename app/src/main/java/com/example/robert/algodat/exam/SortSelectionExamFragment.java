@@ -4,16 +4,12 @@ package com.example.robert.algodat.exam;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.robert.algodat.R;
@@ -105,7 +101,7 @@ public class SortSelectionExamFragment extends Fragment {
                             if(okButton.getText().toString() == "Retry?"){
                                 --next;
                                 getFragmentManager().beginTransaction()
-                                            .replace(R.id.exam_view1, new SortSelectionExamFragment())
+                                            .replace(R.id.examSelectionFrameLayout, new SortSelectionExamFragment())
                                             .commit();
                             }
                             if(next+2 == button.length){
