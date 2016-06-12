@@ -1,6 +1,8 @@
 package com.example.robert.algodat.exam;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.FragmentTransaction;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.main_menu.MainActivity;
 
 
 public class ExamActivity extends AppCompatActivity {
@@ -31,6 +34,7 @@ public class ExamActivity extends AppCompatActivity {
     private ViewFlipper examViewFlipper;
     private TextView timerTextView;
     private int counter;
+    private ImageView examTryAgainImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class ExamActivity extends AppCompatActivity {
         examNextButton = (Button) findViewById(R.id.examNextButton);
         examBackButton = (Button) findViewById(R.id.examBackButton);
         examViewFlipper = (ViewFlipper) findViewById(R.id.examViewFlipper);
+        examTryAgainImageView = (ImageView) findViewById(R.id.examTryAgainImageView);
 
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
@@ -61,6 +66,11 @@ public class ExamActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (counter < 4) {
                     examViewFlipper.showNext();
+                    if (counter == 3){
+                        examNextButton.setText("Submit");
+                    }else{
+                        examNextButton.setText("Next");
+                    }
                     counter++;
                     arrowsImageView[counter] = (ImageView) findViewById(arrowIds[counter]);
                     arrowsImageView[counter].setImageResource(R.drawable.arrow_seen);
@@ -103,8 +113,16 @@ public class ExamActivity extends AppCompatActivity {
             }
         }.start();
 
-
+        examTryAgainImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainIntent = new Intent(ExamActivity.this, ExamActivity.class);
+                startActivity(mainIntent);
+            }
+        });
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
