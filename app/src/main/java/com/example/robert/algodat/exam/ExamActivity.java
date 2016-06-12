@@ -17,10 +17,11 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.main_menu.BaseActivity;
 import com.example.robert.algodat.main_menu.MainActivity;
 
 
-public class ExamActivity extends AppCompatActivity {
+public class ExamActivity extends BaseActivity  {
 
     private static final int[] arrowIds ={ R.id.firstArrowImageView, R.id.secondArrowImageView,
             R.id.thirdArrowImageView, R.id.fourthArrowImageView, R.id.fifthArrowImageView };
@@ -39,6 +40,7 @@ public class ExamActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.exam_activity);
 
         examNextButton = (Button) findViewById(R.id.examNextButton);
@@ -153,5 +155,11 @@ public class ExamActivity extends AppCompatActivity {
                         ExamActivity.super.onBackPressed();
                     }
                 }).create().show();
+    }
+
+    // Navigation Drawer
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

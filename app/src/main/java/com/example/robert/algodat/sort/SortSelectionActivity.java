@@ -14,8 +14,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.robert.algodat.R;
+import com.example.robert.algodat.main_menu.BaseActivity;
 
-public class SortSelectionActivity extends AppCompatActivity {
+public class SortSelectionActivity extends BaseActivity {
 
     SortSelectionFragment sortSelectionFragment;
 
@@ -65,5 +66,11 @@ public class SortSelectionActivity extends AppCompatActivity {
                         SortSelectionActivity.super.onBackPressed();
                     }
                 }).create().show();
+    }
+
+    // Navigation Drawer
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

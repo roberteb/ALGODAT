@@ -52,9 +52,11 @@ public class SettingsActivity extends PreferenceActivity {
     }
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
+        // Navigation Drawer
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getDelegate().onPostCreate(savedInstanceState);
     }
+
     private AppCompatDelegate getDelegate() {
         if (delegate == null) {
             delegate = AppCompatDelegate.create(this, null);
@@ -67,6 +69,23 @@ public class SettingsActivity extends PreferenceActivity {
     }
     public void setSupportActionBar(@Nullable Toolbar toolbar) {
         getDelegate().setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        //Up button
+        onBackPressed();
+
+        return true;
     }
 
 }
