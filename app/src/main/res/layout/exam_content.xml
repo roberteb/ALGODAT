@@ -83,47 +83,41 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         </RelativeLayout>
 
-        <FrameLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/examHashFrameLayout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:layout="@layout/sort_selection_fragment"
-            android:layout_below="@+id/topProgressLinearLayout"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/bottomExamGridLayout">
-        </FrameLayout>
+            android:id="@+id/examMergeRelativeLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question3"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+        </RelativeLayout>
 
-        <FrameLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/examGraphFrameLayout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:layout="@layout/sort_selection_fragment"
-            android:layout_below="@+id/topProgressLinearLayout"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/bottomExamGridLayout">
-        </FrameLayout>
+            android:id="@+id/examGraphRelativeLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question4"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+        </RelativeLayout>
 
-        <FrameLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/examMergeFrameLayout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:layout="@layout/sort_selection_fragment"
-            android:layout_below="@+id/topProgressLinearLayout"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/bottomExamGridLayout">
-        </FrameLayout>
+            android:id="@+id/examTreeRelativeLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question5"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -186,7 +180,7 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior">
                     android:id="@+id/examTryAgainImageView"
                     android:src="@drawable/try_again"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="20dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

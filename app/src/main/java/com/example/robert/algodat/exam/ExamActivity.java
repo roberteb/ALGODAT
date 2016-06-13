@@ -80,6 +80,8 @@ public class ExamActivity extends BaseActivity  {
                     for (counter = 0; counter < 5; counter++) {
                         arrowsImageView[counter] = (ImageView) findViewById(arrowIds[counter]);
                         arrowsImageView[counter].setImageResource(R.drawable.arrow_correct);
+                        examNextButton.setVisibility(View.GONE);
+                        examBackButton.setVisibility(View.GONE);
                     }
                     examViewFlipper.showNext();
                 }
