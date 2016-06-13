@@ -1,6 +1,7 @@
 package com.example.robert.algodat.sort;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.robert.algodat.ProfileActivity;
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.main_menu.BaseActivity;
 
@@ -24,17 +26,15 @@ public class SortSelectionActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sort_selection_activity);
+        super.onCreateDrawer();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Selection Sort");
 
         sortSelectionFragment = new SortSelectionFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.sort_selection_content, sortSelectionFragment);
         ft.commit();
+
     }
 
     @Override
@@ -68,7 +68,10 @@ public class SortSelectionActivity extends BaseActivity {
                 }).create().show();
     }
 
+
+
     // Navigation Drawer
+    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

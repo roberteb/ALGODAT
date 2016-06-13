@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,13 +14,14 @@ import android.widget.TextView;
 
 import com.example.robert.algodat.R;
 
-
 public class SortSelectionFragment extends Fragment {
 
     private static final int[] idArray ={ R.id.button0, R.id.button1,
-                                        R.id.button2, R.id.button3, R.id.button4,
-                                        R.id.button5, R.id.button6 };
+            R.id.button2, R.id.button3, R.id.button4,
+            R.id.button5, R.id.button6 };
+
     private Button[] button = new Button[idArray.length];
+
     TextView wrongTextView;
     private int pos;
     private int next = 0;
@@ -29,11 +29,11 @@ public class SortSelectionFragment extends Fragment {
     final int[] randNums = {21, 23, 7, 9, 2, 3, 4};
     final int[] sortedNums = {2, 3, 4, 7, 9, 21, 23};
     private int previous = -1;
+    private Button okButton;
 
     public SortSelectionFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,10 +45,10 @@ public class SortSelectionFragment extends Fragment {
         wrongTextView = (TextView)rootView.findViewById(R.id.wrongTextView);
         wrongTextView.setVisibility(View.INVISIBLE);
 
-
-        final Button okButton = (Button) rootView.findViewById(R.id.okButton);
+        okButton = (Button) rootView.findViewById(R.id.okButton);
         okButton.setText("Choose Number");
         okButton.setEnabled(false);
+
 
         for(int i = 0; i < button.length; i++) {
             button[i] = (Button) rootView.findViewById(idArray[i]);
@@ -98,10 +98,25 @@ public class SortSelectionFragment extends Fragment {
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if(next+2 == button.length){
+                            if(okButton.getText().toString() == "Retry?"){
+                                --next;
                                 getFragmentManager().beginTransaction()
                                         .replace(R.id.sort_selection_content, new SortSelectionFragment())
                                         .commit();
+                            }
+                            if(next+2 == button.length){
+                                help = button[next].getText().toString();
+                                button[next].setText(button[pos].getText());
+                                button[pos].setText(help);
+                                button[next].setEnabled(false);
+                                button[next].setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorCorrect));
+                                okButton.setText("Retry?");
+                            }else{
+                                okButton.setText("Choose Number");
+                                okButton.setEnabled(false);
+                                button[previous].setBackgroundColor(Color.LTGRAY);
+                                button[previous].setTextColor(Color.BLACK);
+                                button[previous].setEnabled(true);
                             }
 
                             if(sortedNums[next] == Integer.parseInt(button[pos].getText().toString())){
@@ -110,16 +125,16 @@ public class SortSelectionFragment extends Fragment {
                                 button[pos].setText(help);
                                 button[next].setEnabled(false);
                                 button[next].setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorCorrect));
-                                button[++next].setBackgroundColor(Color.RED);
-                                button[next].setTextColor(ColorStateList.valueOf(Color.WHITE));
+                                if(next+2 != button.length) {
+                                    button[++next].setBackgroundColor(Color.RED);
+                                    button[next].setTextColor(ColorStateList.valueOf(Color.WHITE));
+                                }
                             }else
+                            if(next+2 != button.length)
                                 wrongTextView.setVisibility(View.VISIBLE);
-
-                            okButton.setText("Choose Number");
-                            okButton.setEnabled(false);
-                            button[previous].setBackgroundColor(Color.LTGRAY);
-                            button[previous].setTextColor(Color.BLACK);
-                            button[previous].setEnabled(true);
+                            else{
+                                button[++next].setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorCorrect));
+                            }
                         }
                     }
             );
@@ -129,5 +144,4 @@ public class SortSelectionFragment extends Fragment {
 
         return rootView;
     }
-
 }

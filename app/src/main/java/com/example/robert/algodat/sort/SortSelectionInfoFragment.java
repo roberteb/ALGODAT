@@ -43,7 +43,8 @@ public class SortSelectionInfoFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.sort_selection_info_fragment, container, false);
 
-        getActivity().setTitle("Selection Sort");
+        ((SortActivity) getActivity()).setActionBarTitle("Selection Sort");
+
         viewSwitcher = (ViewSwitcher)rootView.findViewById(R.id.viewSwitcher);
         infoButton = (Button)rootView.findViewById(R.id.infoButton);
         videoButton = (Button)rootView.findViewById(R.id.videoButton);
@@ -58,10 +59,10 @@ public class SortSelectionInfoFragment extends Fragment {
         TextView sortInfoTextView = (TextView)rootView.findViewById(R.id.sortInfoTextView);
 
         sortTypeTextView.setText("Selection Sort:");
-        sortInfoTextView.setText( "Placehoder, placeholder, placeholder\n" +
-                                  "Placehoder, placeholder, placeholder\n" +
-                                  "Placehoder, placeholder, placeholder\n" +
-                                  "Placehoder, placeholder, placeholder\n");
+        sortInfoTextView.setText( "Selection Sort is a greedy algorithm.\n" +
+                                  "It has O(n^2) complexity.\n" +
+                                  "Try to find the minimum and switch it\n" +
+                                  "with the currently selected element.\n");
 
         infoButton.setOnClickListener(
                 new View.OnClickListener() {

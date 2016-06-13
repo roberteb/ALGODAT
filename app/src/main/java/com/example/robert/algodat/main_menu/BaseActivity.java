@@ -1,5 +1,6 @@
 package com.example.robert.algodat.main_menu;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.LayoutRes;
@@ -8,6 +9,7 @@ import android.support.v4.content.IntentCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +20,9 @@ import android.view.View;
 import com.example.robert.algodat.ProfileActivity;
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.SettingsActivity;
+import com.example.robert.algodat.exam.ExamActivity;
+import com.example.robert.algodat.sort.SortActivity;
+import com.example.robert.algodat.sort.SortSelectionActivity;
 
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
@@ -99,16 +104,25 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 drawerLayout.closeDrawers();
                 if(this.getClass() == MainActivity.class) break;
 
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
-                        | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-                break;
+                if(this.getClass() == SortSelectionActivity.class) {
+                    this.onBackPressed(); break;
+                }
+
+                if(this.getClass() == ExamActivity.class) {
+                    this.onBackPressed(); break;
+                }
+
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+                            | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
+                    break;
             }
 
             case R.id.profile_id: {
                 drawerLayout.closeDrawers();
+
                 if(this.getClass() == ProfileActivity.class) break;
 
                 Intent intent = new Intent(this, ProfileActivity.class);
@@ -121,6 +135,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             }
             case R.id.settings_id: {
                 drawerLayout.closeDrawers();
+
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 break;

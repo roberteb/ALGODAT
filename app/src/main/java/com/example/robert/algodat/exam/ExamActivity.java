@@ -40,8 +40,8 @@ public class ExamActivity extends BaseActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.exam_activity);
+        super.onCreateDrawer();
 
         examNextButton = (Button) findViewById(R.id.examNextButton);
         examBackButton = (Button) findViewById(R.id.examBackButton);
@@ -52,8 +52,6 @@ public class ExamActivity extends BaseActivity  {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sortSelectionExamFragment = new SortSelectionExamFragment();
 //        sortListFragment = new SortListFragment();
@@ -120,6 +118,7 @@ public class ExamActivity extends BaseActivity  {
         examTryAgainImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent mainIntent = new Intent(ExamActivity.this, ExamActivity.class);
                 startActivity(mainIntent);
             }
@@ -160,6 +159,7 @@ public class ExamActivity extends BaseActivity  {
     }
 
     // Navigation Drawer
+    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

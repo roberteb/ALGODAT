@@ -11,14 +11,20 @@ import com.example.robert.algodat.main_menu.BaseActivity;
 public class SortActivity extends BaseActivity {
 
     SortListFragment sortListFragment;
+    Toolbar toolbar;
+
+    public void setActionBarTitle(String title){
+        toolbar.setTitle(title);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sort_activity);
         super.onCreateDrawer();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         sortListFragment = new SortListFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
