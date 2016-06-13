@@ -35,16 +35,16 @@ public class ProfileActivity extends BaseActivity {
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         levelSystem= new LevelSystem(this);
+        if(levelSystem.finishesLearn(80)){
+            Toast toast= Toast.makeText(this,"Level Up!",Toast.LENGTH_LONG);
+            toast.show();
+        }
         toolbar.setTitle(levelSystem.getUserName());
         setSupportActionBar(toolbar);
         levelText=(TextView) findViewById(R.id.lvlValue);
         String lvl= String.format("%s",levelSystem.getLevel());
         levelText.setText(lvl);
        // System.out.println(levelSystem.getUserName());
-       if(levelSystem.finishesLearn(80)){
-           Toast toast= Toast.makeText(this,"Level Up!",Toast.LENGTH_LONG);
-           toast.show();
-       }
         /*levelSystem.finishesPractice(120);
         levelSystem.winsExam(3000);*/
 
@@ -53,11 +53,13 @@ public class ProfileActivity extends BaseActivity {
         System.out.println("Next level: "+levelSystem.getNextLevel());
         System.out.println("All Xps: "+levelSystem.getSumXp());
         System.out.println("Old Level Xp: "+levelSystem.getOldLvlXp());
+        System.out.println("Progress: "+(levelSystem.getSumXp()-levelSystem.getOldLvlXp()));
+        System.out.println("Max "+(levelSystem.getNextLevel()+levelSystem.getSumXp()-levelSystem.getOldLvlXp()));
 
         levelProgress=(ProgressBar) findViewById(R.id.LevelProgress);
         progressbarExams = (ProgressBar) findViewById(R.id.progressExams);
         progressbarPractice = (ProgressBar) findViewById(R.id.progressPractice);
-        levelProgress.setMax(levelSystem.getNextLevel());
+        levelProgress.setMax(levelSystem.getNextLevel()+levelSystem.getSumXp()-levelSystem.getOldLvlXp());
         levelProgress.setProgress(levelSystem.getSumXp()-levelSystem.getOldLvlXp());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
