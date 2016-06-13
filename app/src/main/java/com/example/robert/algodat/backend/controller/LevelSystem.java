@@ -128,5 +128,10 @@ public class LevelSystem {
         return userDAO.getLearnXp();
     }
 
-
+    public int MadeSortLevels(int chapter){
+        return userDAO.getSortChapterCounter(chapter);
+    }
+    public int getOldLvlXp(){
+        return userDAO.getOldLvlXp();
+    }
 }

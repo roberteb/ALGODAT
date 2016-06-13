@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.robert.algodat.R;
 import com.example.robert.algodat.backend.controller.LevelSystem;
@@ -40,21 +41,24 @@ public class ProfileActivity extends BaseActivity {
         String lvl= String.format("%s",levelSystem.getLevel());
         levelText.setText(lvl);
        // System.out.println(levelSystem.getUserName());
-        /*levelSystem.finishesLearn(80);
-        levelSystem.finishesPractice(120);
+       if(levelSystem.finishesLearn(80)){
+           Toast toast= Toast.makeText(this,"Level Up!",Toast.LENGTH_LONG);
+           toast.show();
+       }
+        /*levelSystem.finishesPractice(120);
         levelSystem.winsExam(3000);*/
 
         System.out.println("Finished Chapters: "+levelSystem.learnedChapters());
         System.out.println("Level: "+levelSystem.getLevel());
         System.out.println("Next level: "+levelSystem.getNextLevel());
         System.out.println("All Xps: "+levelSystem.getSumXp());
-
+        System.out.println("Old Level Xp: "+levelSystem.getOldLvlXp());
 
         levelProgress=(ProgressBar) findViewById(R.id.LevelProgress);
         progressbarExams = (ProgressBar) findViewById(R.id.progressExams);
         progressbarPractice = (ProgressBar) findViewById(R.id.progressPractice);
-        levelProgress.setMax(levelSystem.getSumXp()+levelSystem.getNextLevel());
-        levelProgress.setProgress(levelSystem.getSumXp());
+        levelProgress.setMax(levelSystem.getNextLevel());
+        levelProgress.setProgress(levelSystem.getSumXp()-levelSystem.getOldLvlXp());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

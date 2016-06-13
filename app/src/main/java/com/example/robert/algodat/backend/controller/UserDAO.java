@@ -132,6 +132,7 @@ public class UserDAO {
         boolean leveledUp=false;
         while (getSumXp()>=user.getNxtLvlXp()){
             user.setLvl(user.getLvl()+1);
+            user.setOldLvlXp(user.getNxtLvlXp());
             user.setNxtLvlXp((int)(user.getNxtLvlXp()*1.5));
             leveledUp=true;
             }
@@ -146,5 +147,11 @@ public class UserDAO {
     }
     public int getLearnXp(){
         return user.getLearnXp();
+    }
+    public int getSortChapterCounter(int chapter){
+        return user.getMadeSorts()[chapter];
+    }
+    public int getOldLvlXp(){
+        return user.getOldLvlXp();
     }
 }

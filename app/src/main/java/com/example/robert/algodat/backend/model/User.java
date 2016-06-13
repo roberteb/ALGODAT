@@ -17,6 +17,15 @@ public class User implements Serializable {
     private int practiceXp;
     private int nxtLvlXp;
     private int [] madeSorts;
+    int oldLvlXp;
+
+    public int getOldLvlXp() {
+        return oldLvlXp;
+    }
+
+    public void setOldLvlXp(int oldLvlXp) {
+        this.oldLvlXp = oldLvlXp;
+    }
 
     public int[] getMadeSorts() {
         return madeSorts;
@@ -69,6 +78,7 @@ public class User implements Serializable {
         practiceXp=0;
         nxtLvlXp=100;
         madeSorts= new int[6];
+        int oldLvlXp=0;
     }
 
     public String getName() {
