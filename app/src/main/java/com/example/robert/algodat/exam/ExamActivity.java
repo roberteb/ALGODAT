@@ -92,6 +92,7 @@ public class ExamActivity extends BaseActivity  {
             public void onClick(View v) {
                 if (counter > 0 && counter < 5){
                     examViewFlipper.showPrevious();
+                    if(counter == 4) examNextButton.setText("Next");
                     arrowsImageView[counter] = (ImageView)findViewById(arrowIds[counter]);
                     arrowsImageView[counter].setImageResource(R.drawable.arrow_unseen);
                     counter--;
