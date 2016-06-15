@@ -47,13 +47,13 @@ public class SortSelectionInfoFragment extends Fragment {
 
         viewSwitcher = (ViewSwitcher)rootView.findViewById(R.id.viewSwitcher);
         infoButton = (Button)rootView.findViewById(R.id.infoButton);
-        videoButton = (Button)rootView.findViewById(R.id.videoButton);
         sortGoButton = (Button)rootView.findViewById(R.id.sortGoButton);
+        videoButton = (Button)rootView.findViewById(R.id.videoButton);
 
         infoButton.setBackgroundColor(Color.parseColor("#aa66cc"));
-        videoButton.setBackgroundColor(Color.parseColor("#aa66cc"));
+        sortGoButton.setBackgroundColor(Color.parseColor("#aa66cc"));
         infoButton.setPadding(0,70,0,70);
-        videoButton.setPadding(0,70,0,70);
+        sortGoButton.setPadding(0,70,0,70);
 
         TextView sortTypeTextView = (TextView)rootView.findViewById(R.id.typeTextView);
         TextView sortInfoTextView = (TextView)rootView.findViewById(R.id.sortInfoTextView);
@@ -77,7 +77,7 @@ public class SortSelectionInfoFragment extends Fragment {
                 }
         );
 
-        sortGoButton.setOnClickListener(
+        videoButton.setOnClickListener(
                 new View.OnClickListener() {
 
                     @Override
@@ -90,7 +90,7 @@ public class SortSelectionInfoFragment extends Fragment {
                 }
         );
 
-        videoButton.setOnClickListener(
+        sortGoButton.setOnClickListener(
                 new View.OnClickListener() {
 
                     @Override
@@ -106,9 +106,9 @@ public class SortSelectionInfoFragment extends Fragment {
         discussionButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.comments, 0, 0);
         discussionButton.setPadding(0, 30, 0, 0);
 
-        sortGoButton = (Button)rootView.findViewById(R.id.sortGoButton);
-        sortGoButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.youtube, 0, 0);
-        sortGoButton.setPadding(0, 30, 0, 0);
+
+        videoButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.youtube, 0, 0);
+        videoButton.setPadding(0, 30, 0, 0);
 
         return rootView;
     }

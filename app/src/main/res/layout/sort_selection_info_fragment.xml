@@ -34,7 +34,7 @@
                 android:text="Let&apos;s Go!"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/videoButton"
+                android:id="@+id/sortGoButton"
                 android:textStyle="bold"
                 android:textColor="#FFFF"
                 android:background="@android:color/holo_purple"
@@ -98,7 +98,7 @@
 
         <Button
             android:text="Watch Video"
-            android:id="@+id/sortGoButton"
+            android:id="@+id/videoButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
