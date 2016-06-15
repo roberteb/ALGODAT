@@ -73,6 +73,7 @@ public class SortSelectionInfoFragment extends Fragment {
                         new AnimationUtils();
                         viewSwitcher.setAnimation(AnimationUtils.makeInAnimation(getContext(), true));
                         viewSwitcher.showNext();
+                        videoButton.setEnabled(true);
                     }
                 }
         );
@@ -86,6 +87,7 @@ public class SortSelectionInfoFragment extends Fragment {
                         new AnimationUtils();
                         viewSwitcher.setAnimation(AnimationUtils.makeInAnimation(getContext(), true));
                         viewSwitcher.showPrevious();
+                        videoButton.setEnabled(false);
                     }
                 }
         );
