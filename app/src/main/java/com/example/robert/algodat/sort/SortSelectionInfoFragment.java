@@ -77,7 +77,7 @@ public class SortSelectionInfoFragment extends Fragment {
                 }
         );
 
-        videoButton.setOnClickListener(
+        sortGoButton.setOnClickListener(
                 new View.OnClickListener() {
 
                     @Override
@@ -90,7 +90,7 @@ public class SortSelectionInfoFragment extends Fragment {
                 }
         );
 
-        sortGoButton.setOnClickListener(
+        videoButton.setOnClickListener(
                 new View.OnClickListener() {
 
                     @Override
@@ -107,7 +107,7 @@ public class SortSelectionInfoFragment extends Fragment {
         discussionButton.setPadding(0, 30, 0, 0);
 
         sortGoButton = (Button)rootView.findViewById(R.id.sortGoButton);
-        sortGoButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.letsgo, 0, 0);
+        sortGoButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.youtube, 0, 0);
         sortGoButton.setPadding(0, 30, 0, 0);
 
         return rootView;

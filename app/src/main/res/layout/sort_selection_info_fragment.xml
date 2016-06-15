@@ -31,7 +31,7 @@
                 android:layout_alignParentStart="true" />
 
             <Button
-                android:text="Watch Video"
+                android:text="Let&apos;s Go!"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/videoButton"
@@ -97,7 +97,7 @@
             android:background="?android:attr/selectableItemBackground" />
 
         <Button
-            android:text="Let&apos;s Go!"
+            android:text="Watch Video"
             android:id="@+id/sortGoButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
